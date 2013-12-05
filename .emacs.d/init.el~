@@ -1,0 +1,24 @@
+
+(setq-default c-basic-offset 8)
+
+;; —————————————————————————
+;; Highlighting
+;; —————————————————————————
+;; highlight region between point and mark
+(transient-mark-mode t)
+;; highlight during query
+(setq query-replace-highlight t)
+;; highlight incremental search
+(setq search-highlight t)
+;; Show matching parenthesis. How can you live without it.
+(show-paren-mode t)
+
+
+;; —————————————————————————
+;; Linum (line numbers) M-x linum-mode to enable
+;; —————————————————————————
+(load-file "~/.emacs.d/linum/linum-ex.el")
+(require 'linum)
+(setq linum-format "%d ")
+;(autoload 'linum "linum" "Line numbers for buffers." t)
+(add-hook 'find-file-hook (lambda () (linum-mode 1)))
