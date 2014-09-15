@@ -1,4 +1,4 @@
-# Vim 7.3 generó este archivo "viminfo".
+# Vim 7.4 generó este archivo "viminfo".
 # Puede editarlo, ¡sólo si tiene cuidado!
 
 # Valor de 'encoding' cuando se escribió este archivo
@@ -8,70 +8,15 @@
 # hlsearch on (H) or off (h):
 ~h
 # Último Patrón de búsqueda:
-~MSle0~/Moving cursor
+~MSle0~/alias
 
 # Historia de Línea de órdenes (de lo más nuevo a lo más antiguo):
 :q
-:Q
-:w
 :wq
-:vsplit
-:q!
-:new
-:CtrlP
-:9wincmd w
-:1wincmd w
-:1wincmd
-:help windows
-:close
-:help windows.txt
-:ls
-:buffers
-:bprev
-:bnext
-:split
-:Rails new prueba
-:help rails
-:rails-new prueba
-:rails new prueba
-:helptags ~/.vim/doc
-:30
-:Rvm use default
-:Rvm 1.9.2
-:rvm 1.9.2
-:CommandT
-:CommnadT
-:commandT
-:so %
-:ruby 1
-:help CommandT
-:version
-:source %
-:r
-:Find Trabaj
-:lgrep
-:grep
+:PluginInstall
 
 # Historia de Cadena de búsqueda (de lo más nuevo a lo más antiguo):
-?/Moving cursor
-?/moving cursor
-?/:close
-?/source
-?/syntax
-?/dircolors
-?/dircolor
-?/eval
-?/PS1
-?/solarized
-?/solari
-?/rails new
-?/commands
-?/CommandT
-?/delete
-? ^\s*$
-?/ruby
-?/line
-?/enj
+?/alias
 
 # Historia de Expresión (de lo más nuevo a lo más antiguo):
 
@@ -80,844 +25,232 @@
 # Historia de Línea de entrada (de lo más nuevo a lo más antiguo):
 
 # Registros:
-""1	LINE	0
-	# Add RVM to PATH for scripting PATH=$PATH:$HOME/.rvm/bin
+""0	LINE	0
+	" Avoid a name conflict with L9
+	Plugin 'user/L9', {'name': 'newL9'}
+"1	LINE	0
+	" Avoid a name conflict with L9
+	Plugin 'user/L9', {'name': 'newL9'}
 "2	LINE	0
-	        jButtonProyectos = new javax.swing.JButton();
-	        jButtonTrabajadores = new javax.swing.JButton();
-	        jTextFieldId = new javax.swing.JTextField();
-	        jLabel1 = new javax.swing.JLabel();
-	        jButtonLogin = new javax.swing.JButton();
-	        jLabelInfo = new javax.swing.JLabel();
-	        jButtonAusencias = new javax.swing.JButton();
-	
+	" The sparkup vim script is in a subdirectory of this repo called vim.
+	" Pass the path to set the runtimepath properly.
+	Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 "3	LINE	0
-	    public static boolean trabajadoresOpened = false;
-	    public static boolean proyectosOpened = false;
-	    public static boolean ausenciasOpened = false;
+	" git repos on your local machine (i.e. when working on your own plugin)
+	Plugin 'file:///home/gmarik/path/to/plugin'
 "4	LINE	0
-	    public static boolean trabajadoresOpened = false;
-"5	LINE	0
-	" Atajos de buffers
-"6	LINE	0
-	map <c-<left>><c-s-w j> 
-"7	LINE	0
-	
-"8	LINE	0
-	fi
-"9	LINE	0
-	# enable color support of ls and also add handy aliases
-	if [ -x /usr/bin/dircolors ]; then
-	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	    alias ls='ls --color=auto'
-	    #alias dir='dir --color=auto'
-	    #alias vdir='vdir --color=auto'
-	
-	    alias grep='grep --color=auto'
-	    alias fgrep='fgrep --color=auto'
-	    alias egrep='egrep --color=auto'
-"-	CHAR	0
-	t 
+	Plugin 'git://git.wincent.com/command-t.git'
 
 # Marcas en el archivo:
-'0  1  0  ~/.profile
-'1  1  0  ~/Descargas/DotFiles/.gitconfig
-'2  1  0  ~/.gitconfig
-'3  108  0  ~/.bashrc
-'4  19  0  ~/.bashrc
-'5  1  0  ~/RubymineProjects/blog/db/migrate/20131218005043_create_posts.rb
-'6  1  0  ~/RubymineProjects/blog/db/migrate/20131218004920_create_posts.rb
-'7  1  0  ~/RubymineProjects/blog/config.ru
-'8  75  0  ~/RubymineProjects/blog/app/assets/batman/html/main/index.html
-'9  30  0  ~/RubymineProjects/blog/app/assets/batman/blog.js.coffee
+'0  1  0  ~/README.md
+'1  129  0  ~/Descargas/DotFiles/.vimrc
+'2  1  0  ~/.zsh_history
+'3  1  0  ~/.zsh-update
+'4  48  18  ~/.zshrc
+'5  108  0  ~/.bashrc
+'6  20  0  ~/.oh-my-zsh/plugins/compleat/compleat.plugin.zsh
+'7  28  0  ~/.oh-my-zsh/plugins/colorize/colorize.plugin.zsh
+'8  11  69  ~/.oh-my-zsh/themes/bira.zsh-theme
+'9  95  0  ~/.zshrc
 
 # Lista de saltos (el más reciente va primero):
--'  1  0  ~/.profile
--'  1  0  ~/Descargas/DotFiles/.gitconfig
--'  1  0  ~/.gitconfig
--'  108  0  ~/.bashrc
--'  20  61  ~/.bashrc
--'  1  0  ~/.bashrc
--'  19  0  ~/.bashrc
--'  1  0  ~/RubymineProjects/blog/db/migrate/20131218005043_create_posts.rb
--'  1  0  ~/RubymineProjects/blog/db/migrate/20131218004920_create_posts.rb
--'  1  0  ~/RubymineProjects/blog/config.ru
--'  75  0  ~/RubymineProjects/blog/app/assets/batman/html/main/index.html
--'  1  0  ~/RubymineProjects/blog/app/assets/batman/html/main/index.html
--'  30  0  ~/RubymineProjects/blog/app/assets/batman/blog.js.coffee
--'  1  0  ~/RubymineProjects/blog/app/assets/batman/blog.js.coffee
--'  6  1  ~/RubymineProjects/blog/Gemfile
--'  1  0  ~/RubymineProjects/blog/Gemfile
--'  1  14  ~/Documentos/DSam12-07/.git/COMMIT_EDITMSG
--'  1  13  ~/Documentos/pa001/.git/COMMIT_EDITMSG
--'  30  0  ~/workspace_kepler2/ausencias/src/main/java/es/udc/protoduction/ausencias/ui/VerAusencias.java
--'  1  0  ~/workspace_kepler2/ausencias/src/main/java/es/udc/protoduction/ausencias/ui/VerAusencias.java
--'  113  26  ~/Documentos/comment.rb
--'  1  0  ~/Documentos/comment.rb
--'  46  0  ~/Descargas/web/Vertex v1.3/comments.php
--'  1  0  ~/Descargas/web/Vertex v1.3/comments.php
--'  8  0  ~/.bashrc
--'  5  0  ~/.bashrc
--'  45  0  ~/.bashrc
--'  84  0  ~/.bashrc
--'  80  0  ~/.bashrc
--'  76  0  ~/.bashrc
--'  86  0  ~/.bashrc
--'  85  0  ~/.bashrc
--'  90  2  ~/.bashrc
--'  79  0  ~/.bashrc
--'  89  0  ~/.bashrc
--'  43  0  ~/.bashrc
--'  88  0  ~/.bashrc
--'  88  0  ~/Documentos/comment.rb
--'  5  0  ~/RubymineProjects/ImproveRuby/main.rb
--'  75  0  ~/.vimrc
--'  1  0  ~/.vimrc
--'  97  0  ~/.vimrc
--'  130  0  ~/workspkp/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/hibernate/Album.java
--'  80  0  ~/workspkp/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/hibernate/Album.java
--'  1  0  ~/workspkp/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/hibernate/Album.java
--'  139  0  ~/Documentos/comment.rb
--'  6  0  ~/RubymineProjects/ImproveRuby/main.rb
--'  1  0  ~/Dropbox/Engineer/4o/Marcos de desarrollo/Practicas/MiniBank-src-2.1.0.0/Web/App_LocalResources/es/MiniBank.Master.es.resx
--'  119  0  ~/.vimrc
--'  96  0  ~/.vimrc
--'  1  0  ~/RubymineProjects/ImproveRuby/main.rb
--'  92  25  ~/.bashrc
--'  57  0  ~/.bashrc
+-'  1  0  ~/README.md
 -'  36  0  ~/.vimrc
--'  1  0  ~/Documentos/.vimrc
--'  126  0  ~/Documentos/comment.rb
--'  73  75  ~/.bashrc
--'  72  17  ~/.bashrc
--'  24  28  ~/.bashrc
--'  64  0  ~/.bashrc
--'  25  0  ~/.vimrc
--'  95  0  ~/.vimrc
--'  58  0  ~/.vimrc
--'  82  0  ~/Documentos/comment.rb
--'  75  0  ~/Documentos/comment.rb
--'  1  0  ~/RubymineProjects/RailsTest/config.ru
--'  1  0  ~/RubymineProjects/RailsTest/config/database.yml
--'  1  0  ~/RubymineProjects/RailsTest/bin/rails
--'  1  0  ~/RubymineProjects/RailsTest/Gemfile
--'  1  0  ~/RubymineProjects/RailsTest/Rakefile
--'  1  0  ~/Dropbox/Compartidas/Proyectos/SO/P3/bin/Makefile
--'  12  0  ~/RubymineProjects/RailsTest/log/development.log
--'  1  0  ~/RubymineProjects/RailsTest/public/robots.txt
--'  1  0  ~/Dropbox/Compartidas/Proyectos/SO/P3/bin/LS.c
--'  1  0  ~/Dropbox/Engineer/2o/SXBD/bd_docencia.sql
--'  1  0  ~/RubymineProjects/RailsTest/config/initializers/filter_parameter_logging.rb
--'  1  0  ~/RubymineProjects/RailsTest/config/initializers/session_store.rb
--'  1  0  ~/RubymineProjects/RailsTest/db/development.sqlite3
--'  1  0  ~/RubymineProjects/RailsTest/config/locales/en.yml
--'  13  0  ~/RubymineProjects/ImproveRuby/main.rb
--'  22  0  ~/workspkp/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/hibernate/Album.java
--'  41  0  ~/workspkp/photoalbum03/src/main/webapp/css/Albums.css
--'  1  0  ~/workspkp/photoalbum03/src/main/webapp/css/Albums.css
--'  109  0  ~/.bashrc
--'  1  0  ~/workspkp/photoalbum03/.bashrc
--'  9  0  ~/BonitaBPMCommunity-6.0.3/features/org.bonitasoft.studio.bos.translations_6.0.3.201309061030/feature.xml
--'  251  0  ~/BonitaBPMCommunity-6.0.3/features/org.eclipse.wst.common_core.feature_3.3.2.v201111030500-7B7DFO9F7RZHOhIjR6Mz-NJ/epl-v10.html
--'  1  0  ~/BonitaBPMCommunity-6.0.3/features/org.eclipse.rcp_3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272/eclipse_update_120.jpg
--'  36  0  ~/BonitaBPMCommunity-6.0.3/configuration/org.eclipse.update/platform.xml
--'  162  0  ~/Descargas/web/Vertex v1.3/js/custom.js
--'  43  0  ~/Dropbox/Compartidas/Diana - David - Sergio/Older/sql.sql
--'  126  0  ~/Descargas/web/hot/php/lib/Cake/Test/Case/Model/Datasource/Database/SqliteTest.php
--'  125  0  ~/Dropbox/Compartidas/Proyectos/Proceso de software/sqlite3/shell.c
--'  114  0  ~/Descargas/web/helios/css/skel-noscript.css
--'  1  0  ~/Descargas/web/helios/css/style-narrow.css
--'  80  0  ~/Descargas/web/helios/js/init.js
--'  113  0  ~/jdownloader/jd/languages/sk.loc
+-'  1  0  ~/.vimrc
+-'  129  0  ~/Descargas/DotFiles/.vimrc
+-'  1  0  ~/Descargas/DotFiles/.vimrc
+-'  1  0  ~/.zsh_history
+-'  1  0  ~/.zsh-update
+-'  48  18  ~/.zshrc
+-'  1  0  ~/.zshrc
 -'  108  0  ~/.bashrc
--'  20  61  ~/.bashrc
+-'  1  0  ~/.bashrc
+-'  20  0  ~/.oh-my-zsh/plugins/compleat/compleat.plugin.zsh
+-'  1  0  ~/.oh-my-zsh/plugins/compleat/compleat.plugin.zsh
+-'  28  0  ~/.oh-my-zsh/plugins/colorize/colorize.plugin.zsh
+-'  1  0  ~/.oh-my-zsh/plugins/colorize/colorize.plugin.zsh
+-'  11  69  ~/.oh-my-zsh/themes/bira.zsh-theme
+-'  1  0  ~/.oh-my-zsh/themes/bira.zsh-theme
+-'  95  0  ~/.zshrc
+-'  1  0  ~/.oh-my-zsh/plugins/gitfast/gitfast.plugin.zsh
+-'  71  0  ~/.oh-my-zsh/plugins/rails/rails.plugin.zsh
+-'  1  0  ~/.oh-my-zsh/plugins/rails/rails.plugin.zsh
+-'  33  0  ~/.oh-my-zsh/plugins/cake/cake.plugin.zsh
+-'  1  0  ~/.oh-my-zsh/plugins/cake/cake.plugin.zsh
+-'  1  0  ~/.oh-my-zsh/plugins/git-extras/git-extras.plugin.zsh
+-'  66  0  ~/.zshrc
+-'  14  46  ~/.oh-my-zsh/themes/bira.zsh-theme
+-'  16  63  ~/.oh-my-zsh/themes/bira.zsh-theme
+-'  19  0  ~/.oh-my-zsh/themes/bira.zsh-theme
+-'  3  0  ~/.oh-my-zsh/themes/bira.zsh-theme
+-'  6  0  ~/.zshrc
+-'  12  0  ~/.zshrc.pre-oh-my-zsh
+-'  1  0  ~/.zshrc.pre-oh-my-zsh
+-'  80  34  ~/.zshrc
+-'  1  0  ~/.zsh
+-'  8  14  ~/.zshrc
+-'  6  0  ~/.vimrc
+-'  8  0  ~/[Vundle] Installer
+-'  22  45  ~/.vimrc
+-'  14  0  ~/[Vundle] Installer
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  94  16  ~/.bashrc
+-'  106  32  ~/.bashrc
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  0  ~/[Vundle] Installer
+-'  14  0  ~/[Vundle] Installer
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  0  ~/[Vundle] Installer
+-'  14  0  ~/[Vundle] Installer
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
+-'  6  0  /usr/share/applications/Eclipse.desktop
+-'  8  17  /usr/share/applications/Eclipse.desktop
+-'  1  0  /usr/share/applications/Eclipse.desktop
 
 # Historia de las marcas en los archivos (de la más reciente a la más antigua):
 
-> ~/.profile
+> ~/.vimrc
+	"	36	0
+	^	22	46
+	.	22	46
+	+	36	0
+	+	1	0
+	+	20	41
+	+	19	10
+	+	18	11
+	+	17	0
+	+	18	0
+	+	20	0
+	+	21	11
+	+	22	46
+
+> ~/ControlP
+	"	10	0
+	.	2	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	1	0
+	+	2	0
+
+> ~/README.md
 	"	1	0
 
-> ~/Descargas/DotFiles/.gitconfig
+> ~/Descargas/DotFiles/.vimrc
+	"	129	0
+
+> ~/.zsh_history
 	"	1	0
 
-> ~/.gitconfig
+> ~/.zsh-update
 	"	1	0
+
+> ~/.zshrc
+	"	48	18
+	^	48	18
+	.	48	17
+	+	8	14
+	+	48	17
 
 > ~/.bashrc
 	"	108	0
-	^	5	22
-	.	109	0
-	+	90	11
-	+	90	2
-	+	90	29
-	+	73	0
-	+	73	0
-	+	90	20
-	+	92	26
-	+	93	0
-	+	91	28
-	+	90	32
-	+	6	0
-	+	88	0
-	+	88	0
-	+	88	0
-	+	88	0
-	+	88	0
-	+	88	0
-	+	76	0
-	+	88	0
-	+	88	0
-	+	88	0
-	+	76	0
-	+	9	0
-	+	11	0
-	+	43	0
-	+	43	0
-	+	43	0
-	+	43	0
-	+	43	0
-	+	44	0
-	+	89	0
-	+	89	0
-	+	89	0
-	+	30	0
-	+	31	0
-	+	90	2
-	+	85	0
-	+	76	0
-	+	79	0
-	+	86	0
-	+	90	2
-	+	6	0
-	+	6	0
-	+	4	0
-	+	6	0
-	+	86	0
-	+	85	0
-	+	76	0
-	+	76	0
-	+	80	0
-	+	79	1
-	+	85	0
-	+	80	0
-	+	80	0
-	+	80	0
-	+	77	0
-	+	90	2
-	+	83	0
-	+	84	0
-	+	90	0
-	+	76	0
-	+	5	21
-	+	20	103
-	+	20	126
-	+	20	0
-	+	109	0
+	^	94	17
+	.	94	17
+	+	106	32
+	+	94	17
 
-> ~/RubymineProjects/blog/db/migrate/20131218005043_create_posts.rb
+> ~/.oh-my-zsh/plugins/compleat/compleat.plugin.zsh
+	"	20	0
+
+> ~/.oh-my-zsh/plugins/colorize/colorize.plugin.zsh
+	"	28	0
+
+> ~/.oh-my-zsh/themes/bira.zsh-theme
+	"	11	69
+	^	14	47
+	.	14	47
+	+	16	45
+	+	14	47
+
+> ~/.oh-my-zsh/plugins/gitfast/gitfast.plugin.zsh
 	"	1	0
 
-> ~/RubymineProjects/blog/db/migrate/20131218004920_create_posts.rb
+> ~/.oh-my-zsh/plugins/rails/rails.plugin.zsh
+	"	71	0
+
+> ~/.oh-my-zsh/plugins/cake/cake.plugin.zsh
+	"	33	0
+
+> ~/.oh-my-zsh/plugins/git-extras/git-extras.plugin.zsh
 	"	1	0
 
-> ~/RubymineProjects/blog/config.ru
-	"	1	0
-
-> ~/RubymineProjects/blog/app/assets/batman/html/main/index.html
-	"	75	0
-
-> ~/RubymineProjects/blog/app/assets/batman/blog.js.coffee
-	"	30	0
-
-> ~/RubymineProjects/blog/Gemfile
-	"	6	1
-	^	6	2
-	.	6	1
-	+	7	17
-	+	6	1
-
-> ~/Documentos/DSam12-07/.git/COMMIT_EDITMSG
-	"	1	14
-	^	1	15
-	.	1	14
-	+	1	14
-
-> ~/Documentos/pa001/.git/COMMIT_EDITMSG
-	"	1	13
-	^	1	14
-	.	1	14
-	+	1	14
-
-> ~/workspace_kepler2/ausencias/src/main/java/es/udc/protoduction/ausencias/ui/VerAusencias.java
-	"	30	0
-
-> ~/workspace_kepler2/ausencias/GoToFile
-	"	32	0
-	.	47	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	87	0
-	+	47	0
-
-> ~/workspace_kepler2/ausencias/src/main/java/es/udc/protoduction/ausencias/ui/ManagerUI.java
-	"	36	0
-	.	36	0
-	+	19	0
-	+	16	0
-	+	36	0
-
-> ~/Documentos/comment.rb
-	"	113	26
-	^	117	27
-	.	117	26
-	+	117	26
-
-> ~/Documentos/GoToFile
-	"	1	0
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/GoToFile
-	"	1	0
-	.	1	0
-	+	1	0
-	+	1	0
-	+	135	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	94	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	54	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	14	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-
-> ~/Descargas/web/Vertex v1.3/comments.php
-	"	46	0
-
-> ~/.vimrc
-	"	41	0
-	.	43	0
-	+	67	0
-	+	1	18
-	+	1	18
-	+	6	20
-	+	4	0
-	+	7	0
-	+	20	0
-	+	22	0
-	+	25	0
-	+	28	0
-	+	32	0
-	+	36	0
-	+	38	0
-	+	41	0
-	+	43	0
-	+	45	0
-	+	47	0
-	+	50	0
-	+	52	0
-	+	55	0
-	+	58	0
-	+	60	0
-	+	62	0
-	+	64	0
-	+	66	0
-	+	1	18
-	+	4	0
-	+	1	0
-	+	2	0
-	+	5	0
-	+	67	0
-	+	112	0
-	+	126	27
-	+	130	0
-	+	128	0
-	+	129	8
-	+	94	32
-	+	94	29
-	+	94	0
-	+	94	0
-	+	94	3
-	+	95	33
-	+	95	30
-	+	94	0
-	+	95	0
-	+	96	32
-	+	97	33
-	+	96	0
-	+	97	1
-	+	95	0
-	+	96	0
-	+	97	0
-	+	96	0
-	+	97	0
-	+	51	1
-	+	41	1
-	+	43	28
-	+	43	0
-	m	129	9
-
-> /usr/share/vim/vim73/doc/windows.txt
-	"	326	0
-
-> ~/RubymineProjects/ImproveRuby/main.rb
-	"	5	0
-	.	3	0
-	+	1	18
-	+	4	0
-	+	3	0
-
-> ~/workspkp/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/hibernate/Album.java
-	"	130	0
-
-> ~/workspkp/photoalbum03/GoToFile
-	"	1	0
-	.	13	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	16	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	13	0
-
-> ~/Dropbox/Engineer/4o/Marcos de desarrollo/Practicas/MiniBank-src-2.1.0.0/Web/App_LocalResources/es/MiniBank.Master.es.resx
-	"	1	0
-
-> ~/Documentos/.vimrc
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/config/locales/en.yml
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/db/development.sqlite3
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/config/initializers/session_store.rb
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/config/initializers/filter_parameter_logging.rb
-	"	1	0
-
-> ~/Dropbox/Engineer/2o/SXBD/bd_docencia.sql
-	"	1	0
-
-> ~/Dropbox/Compartidas/Proyectos/SO/P3/bin/LS.c
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/public/robots.txt
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/log/development.log
+> ~/.zshrc.pre-oh-my-zsh
 	"	12	0
 
-> ~/Dropbox/Compartidas/Proyectos/SO/P3/bin/Makefile
+> ~/.zsh
 	"	1	0
 
-> ~/RubymineProjects/RailsTest/Rakefile
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/Gemfile
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/bin/rails
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/config/database.yml
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/config.ru
-	"	1	0
-
-> ~/workspkp/photoalbum03/src/main/webapp/css/Albums.css
-	"	41	0
-
-> ~/workspkp/photoalbum03/.bashrc
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/app/views/layouts/application.html.erb
-	"	14	0
-
-> ~/jdownloader/jd/languages/sk.loc
-	"	113	0
-
-> ~/Descargas/web/helios/js/init.js
-	"	80	0
-
-> ~/Descargas/web/helios/css/style-narrow.css
-	"	1	0
-
-> ~/Descargas/web/helios/css/skel-noscript.css
-	"	114	0
-
-> ~/Dropbox/Compartidas/Proyectos/Proceso de software/sqlite3/shell.c
-	"	125	0
-
-> ~/Descargas/web/hot/php/lib/Cake/Test/Case/Model/Datasource/Database/SqliteTest.php
-	"	126	0
-
-> ~/Dropbox/Compartidas/Diana - David - Sergio/Older/sql.sql
-	"	43	0
-
-> ~/Descargas/web/Vertex v1.3/js/custom.js
-	"	162	0
-
-> ~/BonitaBPMCommunity-6.0.3/configuration/org.eclipse.update/platform.xml
-	"	36	0
-
-> ~/BonitaBPMCommunity-6.0.3/features/org.eclipse.rcp_3.7.2.v20120120-1424-9DB5FmnFq5JCf1UA38R-kz0S0272/eclipse_update_120.jpg
-	"	1	0
-
-> ~/BonitaBPMCommunity-6.0.3/features/org.eclipse.wst.common_core.feature_3.3.2.v201111030500-7B7DFO9F7RZHOhIjR6Mz-NJ/epl-v10.html
-	"	251	0
-
-> ~/BonitaBPMCommunity-6.0.3/features/org.bonitasoft.studio.bos.translations_6.0.3.201309061030/feature.xml
-	"	9	0
-
-> ~/Descargas/web/helios/index.html
-	"	170	2
-
-> ~/.bash_profile
-	"	1	0
-
-> ~/.vim/colors/solarized.vim
-	"	522	0
-
-> ~/Documentos/solarized.vim
-	"	600	0
-
-> ~/set_dark.sh
-	"	13	0
-
-> ~/RubymineProjects/RailsTest/config/boot.rb
-	"	4	0
-
-> ~/RubymineProjects/RailsTest/config/routes.rb
-	"	56	0
-
-> ~/RubymineProjects/RailsTest/test/test_helper.rb
-	"	4	0
-
-> ~/RubymineProjects/RailsTest/config/environment.rb
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/config/initializers/wrap_parameters.rb
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/app/controllers/application_controller.rb
-	"	1	0
-
-> ~/BonitaBPMCommunity-6.0.3/artifacts.xml
-	"	37	0
-
-> ~/RubymineProjects/RailsTest/config/environments/production.rb
-	"	1	0
-
-> ~/RubymineProjects/RailsTest/app/assets/stylesheets/application.css
-	"	1	0
-
-> ~/Descargas/web/Vertex v1.3/index.php
-	"	42	0
-	^	20	109
-	.	21	0
-	+	21	0
-
-> ~/workspace_kepler/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/spring/FileServiceImpl.java
-	"	6	0
-	.	5	0
-	+	5	0
-
-> ~/RubymineProjects/RailsTest/db/seeds.rb
-	"	7	0
-
-> ~/Dropbox/Compartidas/Proyectos/SO/P2/main.c
-	"	52	0
-
-> ~/RubymineProjects/RailsTest/config/initializers/inflections.rb
-	"	16	0
-
-> ~/Descargas/practicafd/src/main/java/es/udc/fi/dc/photoalbum/spring/FileServiceImpl.java
-	"	10	0
-
-> ~/Descargas/GoToFile
-	"	1	0
-	.	3	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	1	0
-	+	3	0
-
-> ~/.vim/doc/rails.txt
-	"	49	58
-
-> ~/Descargas/prueba/README.rdoc
-	"	1	0
-
-> ~/.vim/ruby/command-t/extconf.rb
-	"	1	0
-	^	30	4
-	.	30	4
-	+	30	4
-
-> ~/NERD_tree_1
-	"	4	0
+> ~/[Vundle] Installer
+	"	8	0
 	.	1	0
-	+	1	0
-	+	1	0
-	+	1	0
+	+	8	0
 	+	1	0
 
-> ~/workspkp/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/spring/FileLikeService.java
-	"	1	0
-
-> ~/workspkp/photoalbum03/src/main/java/es/udc/fi/dc/photoalbum/spring/FileLikeServiceImpl.java
-	"	30	2
-
-> ~/workspkp/photoalbum03/target/classes/es/udc/fi/dc/photoalbum/spring/FileLikeServiceImpl.class
-	"	1	0
-
-> ~/workspkp/photoalbum03/README
-	"	1	0
-
-> ~/Descargas/command-t-1.5.1.vba
-	"	1518	0
-
-> ~/.vim/.VimballRecord
-	"	1	0
-	.	1	0
-	+	1	0
-
-> ~/.vim/doc/command-t.txt
-	"	363	48
-
-> ~/install.sh
-	"	12	0
-
-> ~/workspace_kepler/PhotoAlbum03/src/main/java/es/udc/fi/dc/photoalbum/hibernate/AlbumDaoImpl.java
-	"	56	0
-
-> ~/workspace_kepler2/ausencias/Protoduction/src/main/java/es/udc/ausencias/entities/Trabajador.java
-	"	26	1
+> /usr/share/applications/Eclipse.desktop
+	"	8	17
+	^	8	18
+	.	8	17
+	+	8	17
