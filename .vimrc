@@ -20,6 +20,10 @@ Plugin 'L9'
 Plugin 'git@github.com:kien/ctrlp.vim.git'
 " PowerLine
 Plugin 'https://github.com/Lokaltog/powerline'
+"Airline bar
+Plugin 'bling/vim-airline'
+" Vim Surrounding
+Plugin 'tpope/vim-surround'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,3 +38,22 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+syntax enable
+colorscheme monokai
+
+set number
+
+" Airline configuration
+set laststatus=2
+let g:airline_theme='murmur'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
