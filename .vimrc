@@ -24,6 +24,7 @@ Plugin 'https://github.com/Lokaltog/powerline'
 Plugin 'bling/vim-airline'
 " Vim Surrounding
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-markdown'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
