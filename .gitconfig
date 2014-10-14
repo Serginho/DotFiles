@@ -3,3 +3,21 @@
 	email = madridserginho@hotmail.com
 [color]
 	ui = true
+	diff = true
+	status = true
+	branch = true
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	hs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	dt = difftool
+        # Shows a list of branches sorted by last change. Useful when you have a lot
+        #   # of branches with similar names and you're not sure anymore which branch is
+        #     # the right now.
+	brl = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
+[core]
+	editor = vim
