@@ -25,6 +25,12 @@ Plugin 'bling/vim-airline'
 " Vim Surrounding
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'
+" Ruby plugins
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-bundler'
+Plugin 'skalnik/vim-vroom' " To run RSpec tests
+Plugin 'astashov/vim-ruby-debugger' " Ruby debugger
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
