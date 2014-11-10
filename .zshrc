@@ -91,5 +91,5 @@ alias ls='ls -AFpG --color=auto'
 
 
 #Java
-export JAVA_HOME=/opt/jdk1.8.0_11
+export JAVA_HOME=/opt/jdk1.7.0_67
 PATH=$JAVA_HOME/bin:$PATH

@@ -103,6 +103,6 @@ export CATALINA_OPTS=$MAVEN_OPTS
 PATH=/opt/tomcat/apache-tomcat-7.0.29/bin:$PATH
 
 #Java
-export JAVA_HOME=/opt/jdk1.7.0_05
+export JAVA_HOME=/opt/jdk1.7.0_67
 PATH=$JAVA_HOME/bin:$PATH
 
