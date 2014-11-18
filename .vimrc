@@ -1,3 +1,13 @@
+"=============================================================================
+" FileName    :	.vimrc
+" Author      :	Sergio Cancelo
+" Email       :	yo@sergiocancelo.es
+" Description : My VIM Configuration
+" Version     :	1.0
+" LastChange  :	2014-11-18 17:11:04
+" ChangeLog   :
+"=============================================================================
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -24,6 +34,10 @@ Plugin 'https://github.com/Lokaltog/powerline'
 Plugin 'bling/vim-airline'
 " Vim easy motion
 Plugin 'Lokaltog/vim-easymotion'
+" Author VIM Insertion Plugin
+Plugin 'kdurant/AuthorInfo'
+" NERD Commenter
+Plugin 'scrooloose/nerdcommenter'
 " Sintastic
 Plugin 'scrooloose/syntastic'
 " Vim Surrounding
@@ -35,6 +49,7 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'skalnik/vim-vroom' " To run RSpec tests
 Plugin 'astashov/vim-ruby-debugger' " Ruby debugger
+Plugin 'mattn/emmet-vim' " Expand html plugin
 Plugin 'pangloss/vim-javascript' " Javascript identation
 
 " All of your Plugins must be added before the following line
@@ -79,6 +94,12 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" Author plugin configuration
+let g:vimrc_author='Sergio Cancelo'
+let g:vimrc_email='yo@sergiocancelo.es'
+let g:vimrc_homepage='http://sergiocancelo.es'
+nmap <F4> :AuthorInfoDetect<cr> 
+
 " PHP configuration
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType php noremap  :!/usr/bin/php -l %
@@ -102,3 +123,5 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 let javascript_enable_domhtmlcss = 1
 let b:javascript_fold = 1
 
+" Vim Emmet configuration
+let g:user_emmet_leader_key='<C-Z>'
