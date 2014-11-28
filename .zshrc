@@ -88,8 +88,10 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -AFpG --color=auto'
 
-
-
 #Java
 export JAVA_HOME=/opt/jdk1.7.0_67
 PATH=$JAVA_HOME/bin:$PATH
+
+#NodeJS
+export NODE_HOME=/opt/nodejs
+PATH=$NODE_HOME/bin:$PATH
