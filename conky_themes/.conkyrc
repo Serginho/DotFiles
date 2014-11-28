@@ -58,5 +58,5 @@ ${offset 1050}${voffset}${font monofur:size=9:style=Bold}home: ${font monofur:si
 ${offset 1050}${voffset}${color ffffff}${font monofur:size=9:style=Bold}swap: ${font monofur:size=8} ${swap} / ${swapfree}
 
 ${offset 680}${voffset -60}${color ffffff}${font monofur:size=9}${color 92dcbc}IP Address : ${color ffffff} ${addr wlan0}
-${offset 680}${color ffffff}${font monofur:size=9}${color 92dcbc}Down : ${color ffffff}${downspeed wlan0} k/s 
-${offset 680}${color 92dcbc}Up: ${color ffffff}${upspeed wlan0} k/s
+${offset 680}${color ffffff}${font monofur:size=9}${color 92dcbc}Down : ${color ffffff}${downspeed wlan0} 
+${offset 680}${color 92dcbc}Up: ${color ffffff}${upspeed wlan0} 
