@@ -49,7 +49,13 @@ Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
 Plugin 'skalnik/vim-vroom' " To run RSpec tests
 Plugin 'astashov/vim-ruby-debugger' " Ruby debugger
+" Html plugins
 Plugin 'mattn/emmet-vim' " Expand html plugin
+Plugin 'eshock/vim-matchit' " Vim Machit for expand % function
+Plugin 'othree/xml.vim' " Vim XML for handling html tags
+"PHP plugins
+Plugin 'StanAngeloff/php.vim'
+" Javascript plugins
 Plugin 'pangloss/vim-javascript' " Javascript identation
 
 " All of your Plugins must be added before the following line
@@ -125,3 +131,4 @@ let b:javascript_fold = 1
 
 " Vim Emmet configuration
 let g:user_emmet_leader_key='<C-Z>'
+
