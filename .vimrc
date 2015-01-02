@@ -57,7 +57,8 @@ Plugin 'othree/xml.vim' " Vim XML for handling html tags
 Plugin 'StanAngeloff/php.vim'
 " Javascript plugins
 Plugin 'pangloss/vim-javascript' " Javascript identation
-
+" VIM Coffeescript
+Plugin 'kchmck/vim-coffee-script'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
