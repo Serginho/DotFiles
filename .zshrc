@@ -88,9 +88,9 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -AFpG --color=auto'
 
-alias lamppstart = 'sudo /opt/lampp/lampp start'
-alias lamppstop = 'sudo /opt/lampp/lampp stop'
-alias lampprestart = 'sudo /opt/lampp/lampp restart'
+alias lamppstart='sudo /opt/lampp/lampp start'
+alias lamppstop='sudo /opt/lampp/lampp stop'
+alias lampprestart='sudo /opt/lampp/lampp restart'
 
 #Java
 export JAVA_HOME=/opt/jdk1.7.0_67
