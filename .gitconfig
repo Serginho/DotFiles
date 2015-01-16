@@ -19,5 +19,7 @@
         #   # of branches with similar names and you're not sure anymore which branch is
         #     # the right now.
 	brl = for-each-ref --sort=-committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
+[push]
+	default = simple
 [core]
 	editor = vim
