@@ -92,6 +92,8 @@ alias lamppstart='sudo /opt/lampp/lampp start'
 alias lamppstop='sudo /opt/lampp/lampp stop'
 alias lampprestart='sudo /opt/lampp/lampp restart'
 
+alias agroot='cd /opt/lampp/htdocs/agencias'
+
 #Java
 export JAVA_HOME=/opt/jdk1.7.0_67
 PATH=$JAVA_HOME/bin:$PATH
@@ -99,6 +101,10 @@ PATH=$JAVA_HOME/bin:$PATH
 #NodeJS
 export NODE_HOME=/opt/nodejs
 PATH=$NODE_HOME/bin:$PATH
+
+#PHP
+export PHP_HOME=/opt/lampp
+PATH=$PHP_HOME/bin:$PATH
 
 #Twitch Streaming
 #streaming() {

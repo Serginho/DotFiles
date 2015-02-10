@@ -59,6 +59,8 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'pangloss/vim-javascript' " Javascript identation
 " VIM Coffeescript
 Plugin 'kchmck/vim-coffee-script'
+" VIM Vdebug
+Plugin 'joonty/vdebug'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -133,3 +135,7 @@ let b:javascript_fold = 1
 " Vim Emmet configuration
 let g:user_emmet_leader_key='<C-Z>'
 
+" Vdebug for Xdebug
+let g:vdebug_options = {}
+let g:vdebug_options["port"] = 9009
+let g:vdebug_options["host"] = 'localhost'
