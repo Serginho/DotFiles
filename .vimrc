@@ -40,6 +40,8 @@ Plugin 'kdurant/AuthorInfo'
 Plugin 'scrooloose/nerdcommenter'
 " Sintastic
 Plugin 'scrooloose/syntastic'
+" Vim snippets handler
+Plugin 'Serginho/snipMate'
 " Vim Surrounding
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-markdown'

@@ -88,11 +88,11 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -AFpG --color=auto'
 
-alias lamppstart='sudo /opt/lampp/lampp start'
-alias lamppstop='sudo /opt/lampp/lampp stop'
-alias lampprestart='sudo /opt/lampp/lampp restart'
+alias lamppstart='sudo service apache2 start && sudo service mysql start'
+alias lamppstop='sudo service apache2 stop && sudo service mysql stop'
+alias lampprestart='sudo service apache2 restart && sudo service mysql restart'
 
-alias agroot='cd /opt/lampp/htdocs/agencias'
+alias agroot='cd /var/www/agencias'
 
 #Java
 export JAVA_HOME=/opt/jdk1.7.0_67
@@ -102,9 +102,9 @@ PATH=$JAVA_HOME/bin:$PATH
 export NODE_HOME=/opt/nodejs
 PATH=$NODE_HOME/bin:$PATH
 
-#PHP
-export PHP_HOME=/opt/lampp
-PATH=$PHP_HOME/bin:$PATH
+##PHP
+#export PHP_HOME=/opt/lampp
+#PATH=$PHP_HOME/bin:$PATH
 
 #Twitch Streaming
 #streaming() {
