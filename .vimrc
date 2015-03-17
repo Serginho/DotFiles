@@ -27,7 +27,7 @@ Plugin 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 Plugin 'L9'
 " Control P
-Plugin 'git@github.com:kien/ctrlp.vim.git'
+Plugin 'kien/ctrlp.vim'
 " PowerLine
 Plugin 'https://github.com/Lokaltog/powerline'
 "Airline bar
