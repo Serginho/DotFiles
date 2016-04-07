@@ -63,6 +63,9 @@ Plugin 'pangloss/vim-javascript' " Javascript identation
 Plugin 'kchmck/vim-coffee-script'
 " VIM Vdebug
 Plugin 'joonty/vdebug'
+" VIM TypeScript
+Plugin 'leafgarland/typescript-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
