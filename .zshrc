@@ -95,8 +95,11 @@ alias lampprestart='sudo service apache2 restart && sudo service mysql restart'
 alias agroot='cd /var/www/agencias'
 
 #Java
-export JAVA_HOME=/opt/jdk1.7.0_67
+export JAVA_HOME=/opt/jdk1.8.0_101
 PATH=$JAVA_HOME/bin:$PATH
+
+#Maven
+PATH=/opt/apache-maven-3.3.9/bin:$PATH
 
 #NodeJS
 export NODE_HOME=/opt/nodejs

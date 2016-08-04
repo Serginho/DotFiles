@@ -32,6 +32,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'https://github.com/Lokaltog/powerline'
 "Airline bar
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 " Vim easy motion
 Plugin 'Lokaltog/vim-easymotion'
 " Author VIM Insertion Plugin
