@@ -79,31 +79,38 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#Custom Alias
-alias emacs='emacs -nw'
-alias clipboard='xclip -i -selection "clipboard"'
+if [[ `uname` == 'Darwin' ]]; then
+	alias ls='ls -AFpG'
+	export LSCOLORS=ExfxbEaEBxxEhEhBaDaCaD
+else
+	alias ls='ls -AFpG --color=auto'
+
+	alias lamppstart='sudo service apache2 start && sudo service mysql start'
+	alias lamppstop='sudo service apache2 stop && sudo service mysql stop'
+	alias lampprestart='sudo service apache2 restart && sudo service mysql restart'
+
+	alias agroot='cd /var/www/agencias'
+
+	#Java
+	export JAVA_HOME=/opt/jdk1.8.0_101
+	PATH=$JAVA_HOME/bin:$PATH
+
+	#Maven
+	PATH=/opt/apache-maven-3.3.9/bin:$PATH
+
+	#NodeJS
+	export NODE_HOME=/opt/nodejs
+	PATH=$NODE_HOME/bin:$PATH
+
+	#Custom Alias
+	alias emacs='emacs -nw'
+	alias clipboard='xclip -i -selection "clipboard"'
+fi
+
 #some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias ls='ls -AFpG --color=auto'
-
-alias lamppstart='sudo service apache2 start && sudo service mysql start'
-alias lamppstop='sudo service apache2 stop && sudo service mysql stop'
-alias lampprestart='sudo service apache2 restart && sudo service mysql restart'
-
-alias agroot='cd /var/www/agencias'
-
-#Java
-export JAVA_HOME=/opt/jdk1.8.0_101
-PATH=$JAVA_HOME/bin:$PATH
-
-#Maven
-PATH=/opt/apache-maven-3.3.9/bin:$PATH
-
-#NodeJS
-export NODE_HOME=/opt/nodejs
-PATH=$NODE_HOME/bin:$PATH
 
 ##PHP
 #export PHP_HOME=/opt/lampp
@@ -114,8 +121,8 @@ PATH=$NODE_HOME/bin:$PATH
 	#INRES="1920x1080" # input resolution
 	#OUTRES="1280x720" # output resolution
 	#FPS="15" # target FPS
-	#GOP="30" # i-frame interval, should be double of FPS, 
-	#GOPMIN="15" # min i-frame interval, should be equal to fps, 
+	#GOP="30" # i-frame interval, should be double of FPS,
+	#GOPMIN="15" # min i-frame interval, should be equal to fps,
 	#THREADS="4" # max 6
 	#CBR="1000k" # constant bitrate (should be between 1000k - 3000k)
 	#QUALITY="ultrafast"  # one of the many FFMPEG preset
