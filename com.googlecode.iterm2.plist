@@ -52,10 +52,12 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>410 393 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>497 316 796 473 0 0 1440 877 </string>
+	<string>319 317 796 473 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>236 275 570 477 0 0 1440 877 </string>
+	<string>491 275 570 477 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>389 148 570 477 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1316,14 +1318,26 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>BFAB8745-4A96-4A2A-A0F0-6A365403F294</string>
+	<key>NoSyncLastTipTime</key>
+	<real>502967259.60463899</real>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>502754812.52271497</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1359,6 +1373,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/astrum/DotFiles</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1368,13 +1384,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-12-08T18:08:32Z</date>
+	<date>2017-03-15T15:02:13Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>3.0.12</string>
+	<string>3.0.14</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
