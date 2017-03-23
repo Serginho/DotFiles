@@ -12,8 +12,9 @@
 	br = branch
 	co = checkout
 	df = diff
-	lg = log -p
-	hs = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	lc = log --stat --color -p
+	ll = log --oneline --decorate --color --graph
+	graph = log --graph --decorate --all
 	dt = difftool
         # Shows a list of branches sorted by last change. Useful when you have a lot
         #   # of branches with similar names and you're not sure anymore which branch is
