@@ -113,6 +113,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias push-dev-staging='git p && git co staging && git merge dev && git p && git co dev'
+alias push-merge-master='git co master && git merge staging && git p && git co dev'
 
 ##PHP
 #export PHP_HOME=/opt/lampp
