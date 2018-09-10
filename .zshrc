@@ -108,12 +108,16 @@ else
 fi
 
 #some more ls aliases
+
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
 alias push-dev-staging='git p && git co staging && git merge dev && git p && git co dev'
 alias push-merge-master='git co master && git merge staging && git p && git co dev'
+
+#Fuck plugin
+# eval $(thefuck --alias)
 
 ##PHP
 #export PHP_HOME=/opt/lampp
@@ -138,3 +142,6 @@ alias push-merge-master='git co master && git merge staging && git p && git co d
 		#-s $OUTRES -preset $QUALITY -tune film -acodec libmp3lame -threads $THREADS -strict normal \
 		#-bufsize $CBR "rtmp://$SERVER.twitch.tv/app/$STREAM_KEY"
 #}
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
