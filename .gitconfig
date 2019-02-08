@@ -30,3 +30,4 @@
 	default = simple
 [core]
 	editor = vim
+[rerere]
