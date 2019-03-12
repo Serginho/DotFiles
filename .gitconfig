@@ -31,3 +31,5 @@
 [core]
 	editor = vim
 [rerere]
+[rerere]
+	enabled = true
