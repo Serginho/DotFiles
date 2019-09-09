@@ -82,6 +82,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/g
 if [[ `uname` == 'Darwin' ]]; then
 	alias ls='ls -AFpG'
 	export LSCOLORS=ExfxbEaEBxxEhEhBaDaCaD
+	export JAVA_HOME=/Library/Java/Home
 else
 	alias ls='ls -AFpG --color=auto'
 
