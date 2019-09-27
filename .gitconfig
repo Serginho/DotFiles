@@ -8,6 +8,7 @@
 	branch = true
 [alias]
 	p = push
+	pf = push --force-with-lease
 	st = status
 	ci = commit
 	br = branch
