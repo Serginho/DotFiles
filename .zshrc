@@ -145,3 +145,18 @@ alias merge-staging-master='git co master && git merge staging && git p && git c
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+
+# Image optimization
+
+function convertpng() {
+	if [ -z "$1" ]; then
+		echo "Usage: $0 [filename]";
+	else 
+		imagemin --plugin.pngquant.quality={0.1,0.2} "$1.png"  > "$1-op.png";
+		mv "$1-op.png" "$1.png";
+		echo "Converted $1.png";
+	fi
+}
