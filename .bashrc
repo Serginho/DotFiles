@@ -106,3 +106,5 @@ PATH=/opt/tomcat/apache-tomcat-7.0.29/bin:$PATH
 export JAVA_HOME=/opt/jdk1.7.0_67
 PATH=$JAVA_HOME/bin:$PATH
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

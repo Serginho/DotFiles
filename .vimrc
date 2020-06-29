@@ -5,7 +5,6 @@
 " Description : My VIM Configuration
 " Version     :	1.0
 " LastChange  :	2014-11-18 17:11:04
-" ChangeLog   :
 "=============================================================================
 
 set nocompatible              " be iMproved, required
@@ -60,8 +59,6 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'pangloss/vim-javascript' " Javascript identation
 " VIM Coffeescript
 Plugin 'kchmck/vim-coffee-script'
-" VIM Vdebug
-Plugin 'joonty/vdebug'
 " VIM TypeScript
 Plugin 'leafgarland/typescript-vim'
 
