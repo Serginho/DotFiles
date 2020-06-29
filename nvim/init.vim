@@ -20,6 +20,7 @@ let mapleader=","
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'joshdick/onedark.vim'
@@ -50,6 +51,7 @@ let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', '
 
 " Easy motion configuration
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+let g:EasyMotion_add_search_history = 0
 
 " Vim Emmet configuration
 let g:user_emmet_leader_key='<leader>e'
@@ -87,8 +89,6 @@ map <leader>tt :NERDTreeToggle<cr>
 nnoremap <silent> <C-p> :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
-nmap s <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
