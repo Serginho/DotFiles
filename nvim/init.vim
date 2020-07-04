@@ -26,7 +26,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
@@ -38,16 +38,16 @@ call plug#end()
 
 colorscheme onedark
 
-" CtrlP
-let g:ctrlp_custom_ignore='coverage\|dist\|bazel_out\|node_modules\|DS_Store\|.git\|tmp\'
-
 " Nerd tree
 let g:NERDTreeShowHidden=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeQuitOnOpen=1
 
 " coc neovim
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-prettier', 'coc-tsserver', 'coc-java']
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-java']
+
+" YATS
+let g:yats_host_keyword = 1
 
 " Easy motion configuration
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
@@ -65,7 +65,7 @@ function! FloatingFZF()
   call setbufvar(buf, '&signcolumn', 'no')
 
   let height = float2nr(10)
-  let width = float2nr(80)
+  let width = float2nr(160)
   let horizontal = float2nr((&columns - width) / 2)
   let vertical = 1
 
@@ -81,14 +81,22 @@ function! FloatingFZF()
   call nvim_open_win(buf, v:true, opts)
 endfunction
 
-" Mapping
+" Mapping 
+map <C-j> <Down>
+map <C-k> <Up>
+map <C-h> <Left>
+map <C-l> <Right>
+nnoremap <S-j> 10<C-e>
+nnoremap <S-k> 10<C-y>
+
 map <leader>t :NERDTreeFind<cr>
 map <leader>tt :NERDTreeToggle<cr>
 
-"nnoremap <C-p> :FZF<CR>
+" FZF
 nnoremap <silent> <C-p> :call fzf#vim#files('.', {'options': '--prompt ""'})<CR>
 nnoremap <silent> <leader>b :Buffers<CR>
 
+" Easy motion
 map / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 map  n <Plug>(easymotion-next)
@@ -97,4 +105,20 @@ map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gds :sp<CR><Plug>(coc-definition)
+nmap <silent> gdvs :vsp<CR><Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" GitGutter
+noremap ggt :GitGutterToggle<CR>
+noremap ggh :GitGutterLineNrHighlightsToggle<CR>
+noremap ggu :GitGutterUndoHunk<CR>
+noremap ggs :GitGutterPreviewHunk<CR>
+noremap ggp :GitGutterPrevHunk<CR>
+noremap ggn :GitGutterNextHunk<CR>
 

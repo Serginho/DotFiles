@@ -30,7 +30,7 @@
 [push]
 	default = simple
 [core]
-	editor = vim
+	editor = nvim
 [rerere]
 [rerere]
 	enabled = true
