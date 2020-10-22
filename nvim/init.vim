@@ -28,6 +28,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -48,10 +51,21 @@ call plug#end()
 
 colorscheme gruvbox
 
+" Shortcuts to quickly move between vim windows.
+map <leader>1 :1wincmd w<CR>
+map <leader>2 :2wincmd w<CR>
+map <leader>3 :3wincmd w<CR>
+map <leader>4 :4wincmd w<CR>
+map <leader>5 :5wincmd w<CR>
+map <leader>6 :6wincmd w<CR>
+map <leader>7 :7wincmd w<CR>
+map <leader>8 :8wincmd w<CR>
+map <leader>9 :9wincmd w<CR>
 map <C-j> <Down>
 map <C-k> <Up>
 map <C-h> <Left>
 map <C-l> <Right>
+
 nnoremap <S-j> 10<C-e>
 nnoremap <S-k> 10<C-y>
 
@@ -159,3 +173,6 @@ noremap <Leader>ggn :GitGutterNextHunk<CR>
 " GitBlame
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
 
+" Clang format
+noremap <leader>f :FormatCode<CR>
+noremap <leader>F :FormatLines<CR>
