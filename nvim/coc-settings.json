@@ -1,3 +1,5 @@
 {
+  "snippets.ultisnips.usePythonx": false,
+  "typescript.suggest.completeFunctionCalls": false,
   "typescript.preferences.importModuleSpecifier": "relative"
 }

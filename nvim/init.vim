@@ -100,15 +100,18 @@ map <leader>t :NERDTreeFind<cr>
 map <leader>tt :NERDTreeToggle<cr>
 map <leader>tc :NERDTreeClose<cr>
 
+" Nerd commenter
+map <leader>ñ <plug>NERDCommenterToggle
 " coc neovim
 let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-java']
 
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gds :sp<CR><Plug>(coc-definition)
-nmap <silent> gdvs :vsp<CR><Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
+
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " YATS
 let g:yats_host_keyword = 1
