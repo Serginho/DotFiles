@@ -26,7 +26,6 @@ let mapleader=" "
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'easymotion/vim-easymotion'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
@@ -103,7 +102,8 @@ map <leader>tc :NERDTreeClose<cr>
 " Nerd commenter
 map <leader>ñ <plug>NERDCommenterToggle
 " coc neovim
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-java']
+" coc-snippets requires python3 and pip3 install pynvim
+let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-java', 'coc-snippets']
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -112,6 +112,13 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <leader>rn <Plug>(coc-rename)
 
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" coc-snippets
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-j> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-j>'
+let g:coc_snippet_prev = '<c-k>'
+xmap <leader>x  <Plug>(coc-convert-snippet)
 
 " YATS
 let g:yats_host_keyword = 1
