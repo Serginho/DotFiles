@@ -27,9 +27,6 @@ else
 fi
 
 # Alias
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
 alias ll='ls -lFh' #size,show type,human readable
 alias la='ls -lAFh' #long list,show almost all,show type,human readable
 alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
