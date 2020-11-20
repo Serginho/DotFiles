@@ -98,6 +98,11 @@ prompt_context() {
   prompt_segment 237 7 $OS_LOGO
 }
 
+prompt_time() {
+  TIME="%T"
+  prompt_segment 237 7 $TIME
+}
+
 # Git: branch/detached head, dirty status
 prompt_git() {
   (( $+commands[git] )) || return
@@ -235,6 +240,7 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
   prompt_context
+  prompt_time
   prompt_dir
   prompt_git
   prompt_bzr
