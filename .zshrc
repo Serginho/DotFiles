@@ -8,12 +8,14 @@ export ZSH=$HOME/ohmyzsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="gruvbox"
 
-plugins=(git rails)
+TIMER_PRECISION=0
+TIMER_FORMAT='%d'
+
+plugins=(bazel extract frontend-search ng timer web-search)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 if [[ `uname` == 'Darwin' ]]; then
@@ -24,16 +26,34 @@ else
 	alias clipboard='xclip -i -selection "clipboard"'
 fi
 
+# Alias
+alias ll='ls -lFh' #size,show type,human readable
+alias la='ls -lAFh' #long list,show almost all,show type,human readable
+alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
+alias l='ls -CF' # List no details
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+alias grep='grep --color'
+alias t='tail -f'
+
+alias h='history'
+alias hs='history | grep'
+alias hsi='history | grep -i'
+
+alias help='man'
+alias p='ps -f'
+alias sortnr='sort -n -r'
+
+alias g='git'
+
+alias merge-staging-master='git co master && git merge staging && git p && git co staging'
+
 # Vim
 alias v='nvim'
 alias vim='nvim'
-
-# Some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-alias merge-staging-master='git co master && git merge staging && git p && git co staging'
 
 # Web
 export PATH="$HOME/.npm-global/bin:$PATH"
