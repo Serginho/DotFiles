@@ -68,6 +68,8 @@ map <C-l> <Right>
 nnoremap <S-j> 10<C-e>
 nnoremap <S-k> 10<C-y>
 
+map m :call cursor(0, virtcol('$')/2)<CR>
+
 " Buffers
 nnoremap <Leader>n :bp<CR>
 nnoremap <Leader>m :bn<CR>
@@ -95,7 +97,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Unknown'   :'?',
                 \ }
 let g:NERDTreeGitStatusUseNerdFonts = 1
-map <leader>t :NERDTreeFind<cr>
+map <leader>tf :NERDTreeFind<cr>
 map <leader>tt :NERDTreeToggle<cr>
 map <leader>tc :NERDTreeClose<cr>
 
@@ -119,6 +121,11 @@ vmap <C-j> <Plug>(coc-snippets-select)
 let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 xmap <leader>x  <Plug>(coc-convert-snippet)
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 " YATS
 let g:yats_host_keyword = 1
