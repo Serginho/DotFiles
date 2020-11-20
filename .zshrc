@@ -48,6 +48,8 @@ alias p='ps -f'
 alias sortnr='sort -n -r'
 
 alias g='git'
+alias ga='git add -A'
+alias gcam='git commit -a -m'
 
 alias merge-staging-master='git co master && git merge staging && git p && git co staging'
 
