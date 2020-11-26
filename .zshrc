@@ -11,7 +11,7 @@ ZSH_THEME="gruvbox"
 TIMER_PRECISION=0
 TIMER_FORMAT='%d'
 
-plugins=(bazel extract frontend-search ng timer web-search work)
+plugins=(bazel cgit extract frontend-search ng timer web-search work)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -46,34 +46,6 @@ alias hgi='history | grep -i'
 alias help='man'
 alias p='ps -f'
 alias sortnr='sort -n -r'
-
-alias g='git'
-alias gst='git status'
-alias gss='git status -s'
-alias gbd='git branch -d'
-alias gco='git checkout'
-alias gbd='git branch -d'
-alias ga='git add -A'
-alias gca='git commit --amend'
-alias gcam='git commit -a -m'
-alias gm='git merge'
-alias gma='git merge --abort'
-alias grb='git rebase'
-alias grba='git rebase --abort'
-alias grbc='git rebase --continue'
-alias gpr='git pull --rebase'
-alias gp='git push'
-alias gpf='git push --force-with-lease'
-alias gcp='git cherry-pick'
-alias gcpa='git cherry-pick --abort'
-alias gcpc='git cherry-pick --continue'
-alias gd='git diff'
-alias gdca='git diff --cached'
-alias gdcw='git diff --cached --word-diff'
-alias gdw='git diff --word-diff'
-alias grm='git rm'
-alias grmc='git rm --cached'
-alias gr='git reset --'
 
 alias merge-staging-master='git co master && git merge staging && git p && git co staging'
 

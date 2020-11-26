@@ -1,9 +1,12 @@
 alias cdtw='cd && cd tulotero/tulotero-web'
 alias cdtwl='cd && cd tulotero/tulotero-web-landing'
+alias y='yarn'
 alias ycse='yarn cli:serve:es'
 alias ycsm='yarn cli:serve:mx'
+alias yct='yarn cli:test'
 alias ybt='yarn bazel test'
 alias ybr='yarn bazel run'
 alias yl='yarn lint'
 alias yi='yarn install'
+alias yete='yarn cli:e2e'
 

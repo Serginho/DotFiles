@@ -17,7 +17,7 @@
 	df = diff
 	dfw = diff --word-diff
 	lc = log --stat --color -p
-  ll = log --graph --pretty='%C(yellow)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
+  ll = log --graph --pretty='%C(yellow)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	graph = log --graph --decorate --all
 	dt = difftool
 	# Shows a list of branches sorted by last change. Useful when you have a lot
