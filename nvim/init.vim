@@ -25,6 +25,7 @@ let mapleader=" "
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'google/vim-maktaba'
