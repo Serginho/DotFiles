@@ -72,8 +72,8 @@ nnoremap <S-k> 10<C-y>
 map m :call cursor(0, virtcol('$')/2)<CR>
 
 " Buffers
-nnoremap <Leader>n :bp<CR>
-nnoremap <Leader>m :bn<CR>
+nnoremap <C-n> :bp<CR>
+noremap <C-m> :bn<CR>
 nnoremap <Leader>bd :bn<CR> :bd #<CR>
 
 " Airline
