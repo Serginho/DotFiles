@@ -75,6 +75,7 @@ map m :call cursor(0, virtcol('$')/2)<CR>
 nnoremap <C-n> :bp<CR>
 noremap <C-m> :bn<CR>
 nnoremap <Leader>bd :bn<CR> :bd #<CR>
+nnoremap <Leader>abd :%bd<CR> 
 
 " Airline
 let g:airline_powerline_fonts=1
