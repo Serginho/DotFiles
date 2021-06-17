@@ -1,5 +1,6 @@
 alias cdtw='cd && cd tulotero/tulotero-web'
 alias cdtwl='cd && cd tulotero/tulotero-web-landing'
+alias reruntests="git commit --allow-empty --no-verify -m 'build: rerun tests' && git push"
 alias y='yarn'
 alias ycse='yarn cli:serve:es'
 alias ycsm='yarn cli:serve:mx'
