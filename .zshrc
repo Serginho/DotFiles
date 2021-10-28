@@ -73,3 +73,5 @@ if type ag &> /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
 
+# Node
+export NODE_OPTIONS=--max_old_space_size=4096
