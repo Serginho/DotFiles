@@ -26,6 +26,9 @@ else
 	alias clipboard='xclip -i -selection "clipboard"'
 fi
 
+# Brew
+export PATH=/opt/homebrew/bin:$PATH
+
 # Alias
 alias ll='ls -lFh' #size,show type,human readable
 alias la='ls -lAFh' #long list,show almost all,show type,human readable
