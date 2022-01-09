@@ -23,62 +23,49 @@ syntax on                   " syntax highlighting
 
 let mapleader=" "
 
+
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
-Plug 'easymotion/vim-easymotion'
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
-Plug 'joshdick/onedark.vim'
+Plug 'breuckelen/vim-resize'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Lokaltog/powerline'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'preservim/nerdcommenter'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
 Plug 'zivyangll/git-blame.vim'
 
 call plug#end()
 
 colorscheme gruvbox
 
-" Shortcuts to quickly move between vim windows.
-map <leader>1 :1wincmd w<CR>
-map <leader>2 :2wincmd w<CR>
-map <leader>3 :3wincmd w<CR>
-map <leader>4 :4wincmd w<CR>
-map <leader>5 :5wincmd w<CR>
-map <leader>6 :6wincmd w<CR>
-map <leader>7 :7wincmd w<CR>
-map <leader>8 :8wincmd w<CR>
-map <leader>9 :9wincmd w<CR>
-map <C-j> <Down>
-map <C-k> <Up>
-map <C-h> <Left>
-map <C-l> <Right>
+" Search
+nnoremap <silent> <Esc><Esc> :let @/ = ""<CR>
+
+" Shortcuts to quickly windows management.
+map <leader>s :split<CR><c-w>j
+map <leader>vs :vsplit<CR><c-w>l
+
+map <leader>h :1wincmd h<CR>
+map <leader>j :2wincmd j<CR>
+map <leader>k :3wincmd k<CR>
+map <leader>l :4wincmd l<CR>
 
 nnoremap <S-j> 10<C-e>
 nnoremap <S-k> 10<C-y>
 
-map m :call cursor(0, virtcol('$')/2)<CR>
+nnoremap <silent> <c-h> :CmdResizeLeft<cr>
+nnoremap <silent> <c-j> :CmdResizeDown<cr>
+nnoremap <silent> <c-k> :CmdResizeUp<cr>
+nnoremap <silent> <c-l> :CmdResizeRight<cr>
 
 " Buffers
 nnoremap <C-n> :bp<CR>
 noremap <C-m> :bn<CR>
 nnoremap <Leader>bd :bn<CR> :bd #<CR>
 nnoremap <Leader>abd :%bd<CR> 
-
-" Airline
-let g:airline_powerline_fonts=1
 
 " Nerd tree
 let g:NERDTreeShowHidden=1
@@ -105,53 +92,6 @@ map <leader>tc :NERDTreeClose<cr>
 
 " Nerd commenter
 map <leader>ñ <plug>NERDCommenterToggle
-" coc neovim
-" coc-snippets requires python3 and pip3 install pynvim
-let g:coc_global_extensions = ['coc-css', 'coc-html', 'coc-json', 'coc-tsserver', 'coc-java', 'coc-snippets', 'coc-angular']
-
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" coc-snippets
-imap <C-l> <Plug>(coc-snippets-expand)
-vmap <C-j> <Plug>(coc-snippets-select)
-let g:coc_snippet_next = '<c-j>'
-let g:coc_snippet_prev = '<c-k>'
-xmap <leader>x  <Plug>(coc-convert-snippet)
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? coc#_select_confirm() :
-      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" YATS
-let g:yats_host_keyword = 1
-
-" Easy motion configuration
-let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-let g:EasyMotion_add_search_history = 0
-
-map / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
-map  n <Plug>(easymotion-next)
-map  N <Plug>(easymotion-prev)
-map <Leader>l <Plug>(easymotion-lineforward)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>h <Plug>(easymotion-linebackward)
-
-" Vim Emmet configuration
-let g:user_emmet_leader_key='<leader>e'
 
 " FZF
 let g:fzf_action = {'ctrl-t': 'tab split', 'ctrl-s': 'split', 'ctrl-v': 'vsplit'}
@@ -183,6 +123,84 @@ nnoremap <silent> <leader>b :Buffers<CR>
 " π means <A-p> on iTerm2
 nnoremap π :Ag<CR> 
 
+" Lua line
+lua << END
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
+END
+
+" Language service
+
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  -- Enable completion triggered by <c-x><c-o>
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', 'gy', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '<leader>gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+end
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+EOF
+
+
 " GitGutter
 let g:gitgutter_enabled = 0
 let g:gitgutter_highlight_linenrs = 1
@@ -196,7 +214,3 @@ noremap <Leader>ggn :GitGutterNextHunk<CR>
 
 " GitBlame
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
-
-" Clang format
-noremap <leader>f :FormatCode<CR>
-noremap <leader>F :FormatLines<CR>

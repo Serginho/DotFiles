@@ -1,6 +1,0 @@
-{
-  "snippets.ultisnips.usePythonx": false,
-  "typescript.suggest.completeFunctionCalls": false,
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.quoteStyle": "single"
-}
