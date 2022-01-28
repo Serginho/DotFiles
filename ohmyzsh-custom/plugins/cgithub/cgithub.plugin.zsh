@@ -1,0 +1,8 @@
+alias ghprl='gh pr list'
+alias ghprc='gh pr checks'
+alias ghprco='gh pr checkout'
+alias ghprst='gh pr status'
+alias ghprv='gh pr view'
+alias ghpra='gh pr review --approve'
+alias ghprrc='gh pr review -r -b'
+alias ghprcm='gh pr review --comment -b'

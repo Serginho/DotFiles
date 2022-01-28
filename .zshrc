@@ -11,7 +11,7 @@ ZSH_THEME="gruvbox"
 TIMER_PRECISION=0
 TIMER_FORMAT='%d'
 
-plugins=(bazel cgit extract frontend-search ng timer web-search work)
+plugins=(bazel cgit cgithub extract frontend-search ng timer web-search work)
 
 source $ZSH/oh-my-zsh.sh
 
