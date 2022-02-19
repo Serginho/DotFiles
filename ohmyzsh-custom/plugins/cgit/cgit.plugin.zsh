@@ -1,4 +1,9 @@
 
+
+function __create_tag() {
+  git tag -a $1 -m "$1"
+}
+
 alias g='git'
 alias gst='git status'
 alias gss='git status -s'
@@ -41,3 +46,7 @@ alias gstl='git stash list'
 alias gstp='git stash pop'
 alias gsts='git stash save'
 alias grev='git revert'
+alias gct=__create_tag
+alias grt='git tag -d'
+alias grrt='git push --delete origin';
+alias gpt='git push origin'
