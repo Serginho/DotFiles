@@ -26,6 +26,7 @@ let mapleader=" "
 
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'akinsho/bufferline.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'breuckelen/vim-resize'
 Plug 'jiangmiao/auto-pairs'
@@ -42,6 +43,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'preservim/nerdcommenter'
+Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'zivyangll/git-blame.vim'
 
@@ -72,7 +74,7 @@ nnoremap <silent> <c-l> :CmdResizeRight<cr>
 " Buffers
 nnoremap <C-n> :bp<CR>
 noremap <C-m> :bn<CR>
-nnoremap <Leader>bd :bn<CR> :bd #<CR>
+nnoremap <Leader>d :bn<CR> :bd #<CR>
 nnoremap <Leader>abd :%bd<CR> 
 
 " Nerd tree
@@ -97,6 +99,7 @@ let g:NERDTreeGitStatusUseNerdFonts = 1
 map <leader>tf :NERDTreeFind<cr>
 map <leader>tt :NERDTreeToggle<cr>
 map <leader>tc :NERDTreeClose<cr>
+map <leader>tr :NERDTreeRefreshRoot<cr>
 
 " Nerd commenter
 map <leader>ñ <plug>NERDCommenterToggle
@@ -258,7 +261,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
   buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-  buf_set_keymap('n', '<leader>h', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', '<leader>o', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
 end
 
@@ -293,3 +296,16 @@ noremap <Leader>ggn :GitGutterNextHunk<CR>
 
 " GitBlame
 nnoremap <Leader>s :<C-u>call gitblame#echo()<CR>
+
+" Bufferline
+
+lua << EOF
+vim.opt.termguicolors = true
+require("bufferline").setup{
+options = {
+  show_buffer_close_icons = false,
+  show_buffer_icons = true,
+  separator_style = "thin"
+  }
+}
+EOF
