@@ -11,7 +11,7 @@ ZSH_THEME="gruvbox"
 TIMER_PRECISION=0
 TIMER_FORMAT='%d'
 
-plugins=(bazel cgit cgithub extract frontend-search ng timer web-search work)
+plugins=(bazel cgit cgithub extract frontend-search lsd ng timer web-search work)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -19,21 +19,16 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 if [[ `uname` == 'Darwin' ]]; then
-	alias ls='ls -AFpG'
-	export LSCOLORS=ExfxbEaEBxxEhEhBaDaCaD
+  #alias ls='ls -AFpG'
+  export LSCOLORS=ExfxbEaEBxxEhEhBaDaCaD
 else
-	alias ls='ls -AFpG --color=auto'
-	alias clipboard='xclip -i -selection "clipboard"'
+  alias ls='ls -AFpG --color=auto'
+  alias clipboard='xclip -i -selection "clipboard"'
 fi
 
 # Brew
 export PATH=/opt/homebrew/bin:$PATH
 
-# Alias
-alias ll='ls -lFh' #size,show type,human readable
-alias la='ls -lAFh' #long list,show almost all,show type,human readable
-alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
-alias l='ls -CF' # List no details
 
 alias rm='rm -i'
 alias cp='cp -i'

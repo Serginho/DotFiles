@@ -75,7 +75,7 @@ nnoremap <silent> <c-l> :CmdResizeRight<cr>
 " Buffers
 nnoremap <C-n> :bp<CR>
 noremap <C-m> :bn<CR>
-nnoremap <Leader>d :bn<CR> :bd #<CR>
+nnoremap <Leader>d :bd<CR>
 nnoremap <Leader>abd :%bd<CR> 
 
 " Nerd tree
