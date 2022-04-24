@@ -6,8 +6,14 @@ Notice that you have to use *--recursive* for downloading submodules.
 ## Packages
 
 ```
+brew install neovim
 brew install fzf
+brew install the_silver_searcher
 brew install lsd
+brew install bat
+brew install cloc
+brew install gh
+brew install git
 ```
 
 ## Symlinks
