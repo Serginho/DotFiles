@@ -31,6 +31,7 @@ Plug 'alvan/vim-closetag'
 Plug 'airblade/vim-gitgutter'
 Plug 'breuckelen/vim-resize'
 Plug 'gfanto/fzf-lsp.nvim'
+Plug 'github/copilot.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -75,7 +76,7 @@ nnoremap <silent> <c-l> :CmdResizeRight<cr>
 
 " Buffers
 nnoremap <C-n> :bp<CR>
-noremap <C-m> :bn<CR>
+nnoremap <C-m> :bn<CR>
 nnoremap <Leader>d :bd<CR>
 nnoremap <leader>D :%bd\|e#<cr>
 nnoremap <Leader>abd :%bd<CR> 
@@ -196,7 +197,7 @@ end,
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
       }),
-    ['<TAB>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      --['<TAB>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
   sources = cmp.config.sources({
   { name = 'nvim_lsp' },
@@ -210,6 +211,11 @@ end,
 })
 
   -- Set configuration for specific filetype.
+  cmp.setup({
+      completion = {
+        autocomplete = false
+      }
+    })
   cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it. 
