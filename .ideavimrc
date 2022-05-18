@@ -1,1 +1,3 @@
 set vim-surround
+set relativenumber
+set showmode

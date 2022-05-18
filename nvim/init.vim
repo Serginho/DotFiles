@@ -30,6 +30,8 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'alvan/vim-closetag'
 Plug 'airblade/vim-gitgutter'
 Plug 'breuckelen/vim-resize'
+Plug 'gfanto/fzf-lsp.nvim'
+Plug 'github/copilot.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -74,8 +76,9 @@ nnoremap <silent> <c-l> :CmdResizeRight<cr>
 
 " Buffers
 nnoremap <C-n> :bp<CR>
-noremap <C-m> :bn<CR>
-nnoremap <Leader>d :bn<CR> :bd #<CR>
+nnoremap <C-m> :bn<CR>
+nnoremap <Leader>d :bd<CR>
+nnoremap <leader>D :%bd\|e#<cr>
 nnoremap <Leader>abd :%bd<CR> 
 
 " Nerd tree
@@ -194,7 +197,7 @@ end,
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
       }),
-    ['<TAB>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      --['<TAB>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
   sources = cmp.config.sources({
   { name = 'nvim_lsp' },
@@ -208,6 +211,11 @@ end,
 })
 
   -- Set configuration for specific filetype.
+  cmp.setup({
+      completion = {
+        autocomplete = false
+      }
+    })
   cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
     { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it. 
@@ -258,8 +266,8 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<leader>gh', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<leader>nd', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', '<leader>pd', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
   buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
   buf_set_keymap('n', '<leader>o', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -279,6 +287,8 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+-- Fzf lsp
+require'fzf_lsp'.setup()
 
 
 EOF

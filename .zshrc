@@ -11,11 +11,10 @@ ZSH_THEME="gruvbox"
 TIMER_PRECISION=0
 TIMER_FORMAT='%d'
 
-plugins=(bazel cgit cgithub extract frontend-search ng timer web-search work colorize images) 
+plugins=(bat bazel cgit cgithub extract file frontend-search lsd ng timer web-search work images)
 
 source $ZSH/oh-my-zsh.sh
-source $ZSH_CUSTOM/.aliases
-source $ZSH_CUSTOM/.functions
+source $HOME/.zshaliases
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

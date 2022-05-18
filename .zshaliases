@@ -1,14 +1,5 @@
+alias ls='ls -AFpG'
 
-if [[ `uname` == 'Darwin' ]]; then
-	alias ls='ls -AFpG'
-	export LSCOLORS=ExfxbEaEBxxEhEhBaDaCaD
-else
-	alias ls='ls -AFpG --color=auto'
-	alias clipboard='xclip -i -selection "clipboard"'
-fi
-
-
-# Alias
 alias ll='ls -lFh' #size,show type,human readable
 alias la='ls -lAFh' #long list,show almost all,show type,human readable
 alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
@@ -26,10 +17,6 @@ alias hg='history | grep'
 alias hgi='history | grep -i'
 
 alias help='man'
-alias p='ps -f'
-alias sortnr='sort -n -r'
-
-alias merge-staging-master='git co master && git merge staging && git p && git co staging'
 
 # Vim
 alias v='nvim'
