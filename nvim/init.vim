@@ -89,7 +89,7 @@ nnoremap <leader>abd :%bd<cr>
 " Nerd tree
 let g:NERDTreeShowHidden=1
 let g:NERDTreeMinimalUI=1
-let g:NERDTreeQuitOnOpen=0
+let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=60
 " Nerd tree git
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -109,8 +109,6 @@ map <leader>tf :NERDTreeFind<cr>
 map <leader>tt :NERDTreeToggle<cr>
 map <leader>tc :NERDTreeClose<cr>
 map <leader>tr :NERDTreeRefreshRoot<cr>
-map <leader>tko :let g:NERDTreeQuitOnOpen=0<cr>
-map <leader>tao :let g:NERDTreeQuitOnOpen=1<cr>
 
 " Nerd commenter
 map <leader>ñ <plug>NERDCommenterToggle
