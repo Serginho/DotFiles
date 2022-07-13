@@ -1,3 +1,12 @@
+function __merge_staging() {
+  current_branch=`git branch --show`
+  git pull --rebase
+  git checkout staging
+  git pull --rebase
+  git checkout $current_branch
+  git merge staging
+}
+
 alias cdtw='cd && cd tulotero/tulotero-web'
 alias cdtwl='cd && cd tulotero/tulotero-web-landing'
 alias reruntests="git commit --allow-empty --no-verify -m 'build: rerun tests' && git push"
@@ -32,3 +41,4 @@ alias yetewes='yarn cli:e2e:es:watch'
 alias yetewmx='yarn cli:e2e:mx:watch'
 alias yetewus='yarn cli:e2e:us:watch'
 
+alias merge-staging=__merge_staging
