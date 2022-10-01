@@ -11,7 +11,7 @@ ZSH_THEME="gruvbox"
 TIMER_PRECISION=0
 TIMER_FORMAT='%d'
 
-plugins=(bat bazel cgit cgithub extract file frontend-search lsd ng timer web-search work)
+plugins=(angular bat bazel cgit cgithub extract file frontend-search lsd ng timer web-search work)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -50,6 +50,7 @@ alias merge-staging-master='git co master && git merge staging && git p && git c
 # Vim
 alias v='nvim'
 alias vim='nvim'
+alias vimdiff='nvim -d'
 
 # Web
 export PATH="$HOME/.npm-global/bin:$PATH"
