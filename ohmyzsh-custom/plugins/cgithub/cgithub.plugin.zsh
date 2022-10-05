@@ -14,3 +14,23 @@ alias ghprv='gh pr view'
 alias ghpra='gh pr review --approve'
 alias ghprrc='gh pr review -r -b'
 alias ghprcm='gh pr review --comment -b'
+
+function __github_create_issue() {
+  command="gh issue create"
+
+  if [ "$4" != "" ]; then
+    command+=" -m $4"
+  fi
+
+  if [ "$3" != "" ]; then
+    command+=" -l $3"
+  fi
+
+  if [ "$2" != "" -a "$1" != "" ]; then
+    command+=" -t $1 -b $2"
+  fi
+
+  eval "$command"
+}
+
+alias ghci=__github_create_issue
