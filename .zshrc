@@ -13,6 +13,7 @@ TIMER_FORMAT='%d'
 
 [ -z $plugins ] && plugins=()
 plugins+=(angular bat bazel cgit cgithub extract file frontend-search lsd ng timer web-search work)
+[ -z $JIRA_URL ] || plugins+=(jira)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,3 +80,6 @@ export NODE_OPTIONS=--max_old_space_size=4096
 # Arm64 puppetter provide chromium
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+# Jira
+export JIRA_DEFAULT_ACTION='dashboard'

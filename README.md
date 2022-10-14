@@ -39,3 +39,13 @@ Directory .config
 ln -s ~/DotFiles/nvim
 ln -s ~/DotFiles/lsd
 ```
+
+## Plugins
+
+### Jira
+
+Setup your ohmyzsh jira config on your private config file
+
+```
+export JIRA_URL='https://url_to_jira_cloud.example'
+```
