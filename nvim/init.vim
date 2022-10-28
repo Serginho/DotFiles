@@ -53,6 +53,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'scrooloose/nerdtree'
 Plug 'zivyangll/git-blame.vim'
+Plug 'nvim-lua/plenary.nvim'
 
 call plug#end()
 
