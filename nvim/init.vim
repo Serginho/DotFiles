@@ -55,6 +55,10 @@ Plug 'scrooloose/nerdtree'
 Plug 'zivyangll/git-blame.vim'
 Plug 'nvim-lua/plenary.nvim'
 
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+
 call plug#end()
 
 colorscheme gruvbox

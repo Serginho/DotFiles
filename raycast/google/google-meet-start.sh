@@ -15,5 +15,5 @@
 # @raycast.author Serginho
 # @raycast.authorURL https://sergiocancelo.es
 
-open https://meet.google.com/new
+open https://meet.google.com/new?authuser=1
 
