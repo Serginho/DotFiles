@@ -1,3 +1,15 @@
+# Improve zsh load time
+ZSH_DISABLE_COMPFIX="true"
+
+# Speed up zsh compinit by only checking cache once a day.
+autoload -Uz compinit
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+  touch .zcompdump
+else
+  compinit -C
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH_CUSTOM=$HOME/ohmyzsh-custom
 export ZSH=$HOME/ohmyzsh
@@ -20,6 +32,23 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
+# Brew
+export PATH=/opt/homebrew/bin:$PATH
+
+# Web
+export PATH="$HOME/.npm-global/bin:$PATH"
+
+# Node
+export NODE_OPTIONS=--max_old_space_size=4096
+
+# Arm64 puppetter provide chromium
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
+# Jira
+export JIRA_DEFAULT_ACTION='dashboard'
+export EDITOR='nvim'
+
 if [[ `uname` == 'Darwin' ]]; then
   #alias ls='ls -AFpG'
   export LSCOLORS=ExfxbEaEBxxEhEhBaDaCaD
@@ -27,10 +56,6 @@ else
   alias ls='ls -AFpG --color=auto'
   alias clipboard='xclip -i -selection "clipboard"'
 fi
-
-# Brew
-export PATH=/opt/homebrew/bin:$PATH
-
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -47,17 +72,13 @@ alias help='man'
 alias p='ps -f'
 alias sortnr='sort -n -r'
 
-alias merge-staging-master='git co master && git merge staging && git p && git co staging'
-
 # Vim
 alias v='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
-# Web
-export PATH="$HOME/.npm-global/bin:$PATH"
-
 # Image optimization
+autoload -U convertpng
 
 function convertpng() {
 	if [ -z "$1" ]; then
@@ -73,13 +94,3 @@ function convertpng() {
 if type ag &> /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
-
-# Node
-export NODE_OPTIONS=--max_old_space_size=4096
-
-# Arm64 puppetter provide chromium
-export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-
-# Jira
-export JIRA_DEFAULT_ACTION='dashboard'
