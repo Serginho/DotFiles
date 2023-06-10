@@ -3,9 +3,9 @@ ZSH_DISABLE_COMPFIX="true"
 
 # Speed up zsh compinit by only checking cache once a day.
 autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+if [[ -n $HOME/.zcompdump(#qN.mh+24) ]]; then
   compinit
-  touch .zcompdump
+  touch $HOME/.zcompdump
 else
   compinit -C
 fi
