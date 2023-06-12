@@ -23,5 +23,4 @@ alias yl='yarn lint'
 alias yi='yarn install'
 
 alias merge-staging=__merge_staging
-alias merge-staging-master='git co master && git merge staging && gi
-    t p && git co staging'
+alias merge-staging-master='git co master && git merge staging && git p && git co staging'
