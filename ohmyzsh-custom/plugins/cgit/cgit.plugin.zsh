@@ -17,10 +17,10 @@ fi
 alias g='git'
 alias gst='git status'
 alias gss='git status -s'
+alias gcb='git checkout -b'
 alias gbd='git branch -d'
 alias gbcp='git branch --show-current | pbcopy' 
 alias gco='git checkout'
-alias gcob='git checkout -b'
 alias gbd=__delete_branches
 alias ga='git add -A'
 alias gca='git commit --amend'
