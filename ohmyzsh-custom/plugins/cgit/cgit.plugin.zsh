@@ -4,6 +4,16 @@ function __create_tag() {
   git tag -a $1 -m "$1"
 }
 
+function __delete_branches() {
+selected_branches=$(git branch --list | sed 's/\*//g' | fzf --multi)
+
+if [ -n "$selected_branches" ]; then
+    while read -r branch; do
+        git branch -D "$branch"
+    done <<< "$selected_branches"
+fi
+}
+
 alias g='git'
 alias gst='git status'
 alias gss='git status -s'
@@ -11,7 +21,7 @@ alias gbd='git branch -d'
 alias gbcp='git branch --show-current | pbcopy' 
 alias gco='git checkout'
 alias gcob='git checkout -b'
-alias gbd='git branch -d'
+alias gbd=__delete_branches
 alias ga='git add -A'
 alias gca='git commit --amend'
 alias gcam='git commit -a -m'
