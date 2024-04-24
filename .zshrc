@@ -12,7 +12,7 @@ TIMER_PRECISION=0
 TIMER_FORMAT='%d'
 
 [ -z $plugins ] && plugins=()
-plugins+=(angular bat bazel cdocker cgit cgithub extract file frontend-search lsd ng timer web-search work)
+plugins+=(angular bat bazel cdocker cgit cgithub extract file frontend-search lsd ng timer web-search work yt)
 [ -z $JIRA_URL ] || plugins+=(jira)
 
 source $ZSH/oh-my-zsh.sh
