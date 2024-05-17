@@ -20,5 +20,6 @@ alias yibt='yarn ibazel test'
 alias yibr='yarn ibazel run'
 alias yl='yarn lint'
 alias yi='yarn install'
+alias ys='yarn start'
 
 alias merge-staging=__merge_staging
