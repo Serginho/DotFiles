@@ -17,6 +17,12 @@ return {
         end,
         desc = "CopilotChat - Quick chat",
       },
+      {
+        "<leader>cpO",
+        function()
+          require("CopilotChat").open()
+        end,
+      },
     },
     opts = {
       debug = false, -- Enable debugging
