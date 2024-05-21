@@ -12,7 +12,7 @@ TIMER_PRECISION=0
 TIMER_FORMAT='%d'
 
 [ -z $plugins ] && plugins=()
-plugins+=(angular bat bazel cdocker cgit cgithub extract file frontend-search lsd ng timer web-search work yt)
+plugins+=(angular bat bazel cdocker cgit cgithub extract file frontend-search lsd ng timer tmux web-search work yt)
 [ -z $JIRA_URL ] || plugins+=(jira)
 
 source $ZSH/oh-my-zsh.sh
@@ -53,6 +53,10 @@ alias merge-staging-master='git co master && git merge staging && git p && git c
 alias v='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+
+# Tmux tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
 
 # Web
 export PATH="$HOME/.npm-global/bin:$PATH"
