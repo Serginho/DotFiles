@@ -51,6 +51,15 @@ ln -s ~/DotFiles/nvim
 ln -s ~/DotFiles/lsd
 ```
 
+## Raycast
+
+To enable raycast extensions, compile extensions locally
+
+```
+yarn install
+yarn dev
+```
+
 ## Plugins
 
 ### Jira
