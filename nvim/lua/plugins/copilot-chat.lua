@@ -18,10 +18,69 @@ return {
         desc = "CopilotChat - Quick chat",
       },
       {
+        "<leader>cpq",
+        function()
+          local input = vim.fn.input("Query Chat: ")
+          if input ~= "" then
+            require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
+          end
+        end,
+        mode = "x", -- Esto asegura que el mapeo solo funcione en modo visual
+        desc = "CopilotChat - Chat with visual selection",
+      },
+      {
         "<leader>cpO",
         function()
           require("CopilotChat").open()
         end,
+      },
+            {
+        "<leader>cpfd",
+        function()
+          local current_bufnr = vim.api.nvim_get_current_buf()
+          local diagnostics = vim.diagnostic.get(current_bufnr)
+          local default_query = "Por favor, ayúdame con el siguiente problema de diagnóstico en el código seleccionado y explica el fallo. Proporciona solo el código corregido en un bloque de código, sin explicaciones adicionales:"
+
+          -- Intenta encontrar el diagnóstico más relevante en la línea actual
+          local cursor_line = vim.api.nvim_win_get_cursor(0)[1] - 1 -- Lua es 0-indexed, Vim es 1-indexed
+          local relevant_diag_info = ""
+
+          if #diagnostics > 0 then
+            -- Filtrar diagnósticos para la línea actual
+            local line_diagnostics = {}
+            for _, diag in ipairs(diagnostics) do
+              if diag.lnum == cursor_line then
+                table.insert(line_diagnostics, diag)
+              end
+            end
+
+            -- Si hay diagnósticos en la línea actual, toma el primero o más relevante
+            if #line_diagnostics > 0 then
+              local first_diag = line_diagnostics[1]
+              relevant_diag_info = string.format(" Diagnóstico: %s (Severity: %s, Source: %s)",
+                                                  first_diag.message,
+                                                  vim.diagnostic.severity[first_diag.severity],
+                                                  first_diag.source or "Unknown")
+            else
+              -- Si no hay diagnósticos en la línea actual, intenta tomar el primero del búfer
+              local first_diag = diagnostics[1]
+               relevant_diag_info = string.format(" Diagnóstico (primero en el archivo): %s (Severity: %s, Source: %s)",
+                                                  first_diag.message,
+                                                  vim.diagnostic.severity[first_diag.severity],
+                                                  first_diag.source or "Unknown")
+            end
+          end
+
+          -- Combina la consulta por defecto con la información del diagnóstico
+          local input = default_query
+
+          if input ~= "" then
+            -- Usa la selección visual si está activa, de lo contrario, el búfer completo
+            local current_selection = require("CopilotChat.select").buffer
+            require("CopilotChat").ask(input, { selection = current_selection })
+          end
+        end,
+        desc = "CopilotChat - Fix Diagnostic with context",
       },
     },
     opts = {
@@ -86,6 +145,10 @@ return {
         Tests = {
           prompt = "/COPILOT_GENERATE Genera pruebas para el código seleccionado.",
           mapping = "<leader>cpt",
+        },
+        InjectChunk = {
+          prompt = "/COPILOT_GENERATE A partir del siguiente código, te voy a dar intrucciones a realizar:",
+          mapping = "<leader>cpi",
         },
         -- FixDiagnostic = {
         --   prompt = "Por favor, ayudame con el siguiente problema de diagnóstico en el archivo:",

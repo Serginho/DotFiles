@@ -15,6 +15,7 @@ brew install cloc
 brew install gh
 brew install git
 brew install jq
+brew install openai-whisper
 ```
 
 ## NPM Packages
