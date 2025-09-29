@@ -16,7 +16,7 @@ return {
       },
     },
     config = function(_, opts)
-      require("nvim-treesitter.configs").setup(opts)
+      require("nvim-treesitter").setup(opts)
 
       -- Associate .hbs files with HTML syntax highlighting
       vim.filetype.add({
