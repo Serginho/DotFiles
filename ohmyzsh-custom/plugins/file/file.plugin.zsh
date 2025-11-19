@@ -4,3 +4,7 @@ function sharefile() {
   echo $URL | /usr/bin/pbcopy
   echo "$URL copied on clipboard"
 }
+
+function fh() {
+  eval $(history | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
