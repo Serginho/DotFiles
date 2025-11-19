@@ -139,7 +139,7 @@ return {
           mapping = "<leader>cpo",
         },
         Docs = {
-          prompt = "/COPILOT_GENERATE Añade documentación al código seleccionado.",
+          prompt = "/COPILOT_GENERATE Añade documentación al código seleccionado. No imprimas las líneas del código al inicio",
           mapping = "<leader>cpd",
         },
         Tests = {

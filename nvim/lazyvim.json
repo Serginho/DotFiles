@@ -1,6 +1,8 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.ai.copilot"
+    "lazyvim.plugins.extras.ai.copilot",
+    "lazyvim.plugins.extras.lang.angular",
+    "lazyvim.plugins.extras.lang.markdown"
   ],
   "install_version": 7,
   "news": {
