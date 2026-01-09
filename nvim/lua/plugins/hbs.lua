@@ -1,29 +1,8 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = { "html" },
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      },
-      -- Use HTML parser for .hbs files
-      matchup = {
-        enable = true,
-      },
-      indent = {
-        enable = true,
-      },
-    },
-    config = function(_, opts)
-      require("nvim-treesitter").setup(opts)
-
-      -- Associate .hbs files with HTML syntax highlighting
-      vim.filetype.add({
-        extension = {
-          hbs = "html",
-        },
-      })
+    opts = function(_, opts)
+      vim.list_extend(opts.ensure_installed or {}, { "html" })
     end,
   },
 }
