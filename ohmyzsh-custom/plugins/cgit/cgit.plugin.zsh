@@ -41,6 +41,7 @@ alias gst='git status'
 alias gss='git status -s'
 alias gcb='git checkout -b'
 alias gbd='git branch -d'
+alias gbl='git branch -l'
 alias gbcp='git branch --show-current | pbcopy' 
 alias gco='git checkout'
 alias gcfd=__gcfd
@@ -83,3 +84,108 @@ alias gct=__create_tag
 alias grt='git tag -d'
 alias grrt='git push --delete origin';
 alias gpt='git push origin'
+
+
+
+
+
+
+
+
+
+# Git Worktree
+
+function __gwco() {
+  if [ -z "$1" ]; then
+    echo "❌ Error: Debes especificar el nombre de la rama."
+    echo "Uso: gwco <rama> [base]"
+    return 1
+  fi
+
+  local branch="$1"
+  local base="${2:-HEAD}"
+
+  local repo_root
+  repo_root=$(git rev-parse --show-toplevel) || return 1
+  
+  local repo_name
+  repo_name=$(basename "$repo_root")
+
+  local parent_dir
+  parent_dir=$(dirname "$repo_root")
+
+  local branch_folder="${branch//\//-}"
+
+  local target_dir="$parent_dir/$repo_name-$branch_folder"
+
+  echo "🚀 Configurando worktree..."
+  echo "📂 Origen: $repo_name ($base)"
+  echo "📂 Destino: $target_dir"
+
+  git worktree add -b "$branch" "$target_dir" "$base" 2>/dev/null || \
+  git worktree add "$target_dir" "$branch"
+
+  cd "$target_dir" 
+}
+
+function _gwco_autocomplete() {
+  local -a branches
+  branches=("${(@f)$(git branch --all --format='%(refname:short)' 2>/dev/null)}")
+  compadd -- "${branches[@]}"
+}
+
+compdef _gwco_autocomplete __gwco gwco
+
+function __gwrm() {
+  if [ -z "$1" ]; then
+    echo "❌ Error: Debes especificar el nombre del worktree."
+    echo "Uso: gwrm <worktree>"
+    return 1
+  fi
+
+  local worktree="$1"
+  local repo_root
+  repo_root=$(git worktree list --porcelain | awk '/worktree/ {print $2; exit}')
+
+  local parent_dir
+  parent_dir=$(dirname "$repo_root")
+
+  local target_dir="$parent_dir/$worktree"
+
+  echo "🗑️ Eliminando worktree..."
+  echo "📂 Worktree: $target_dir"
+
+  git worktree remove "$target_dir" --force && rm -rf "$target_dir"
+
+  echo "🔙 Volviendo al repositorio principal..."
+  cd "$repo_root" || return 1
+}
+
+
+function __gwrp() {
+  local repo_root
+  repo_root=$(git worktree list --porcelain | awk '/worktree/ {print $2; exit}')
+
+  if [ -z "$repo_root" ]; then
+    echo "❌ Error: No estás dentro de un repositorio Git o worktree."
+    return 1
+  fi
+
+  echo "🔙 Volviendo al directorio original del repositorio..."
+  cd "$repo_root" || return 1
+}
+
+function _gwrm_autocomplete() {
+  local -a worktrees
+  worktrees=("${(@f)$(git worktree list --porcelain 2>/dev/null | grep '^worktree' | cut -d' ' -f2 | tail -n +2 | xargs -I{} basename {})}")
+  compadd -- "${worktrees[@]}"
+}
+
+compdef _gwrm_autocomplete __gwrm gwrm
+
+alias gwl='git worktree list';
+alias gwco=__gwco;
+alias gwrm=__gwrm;
+alias gwrp=__gwrp;
+
+
