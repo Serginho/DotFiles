@@ -1,6 +1,6 @@
 
 function __github_pr_select() {
-  SELECTED_PR=$(gh pr list --json number,title | jq -r '.[]|"\(.number) \(.title)"' | ipt -S 20 | sed 's/\"//g')
+  SELECTED_PR=$(gh pr list --json number,title | jq -r '.[]|"\(.number) \(.title)"' | fzf | sed 's/\"//g')
   echo $SELECTED_PR
   gh pr checkout $(echo $SELECTED_PR | awk '{print $1}')
 }

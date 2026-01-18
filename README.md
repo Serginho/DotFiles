@@ -18,12 +18,6 @@ brew install jq
 brew install openai-whisper
 ```
 
-## NPM Packages
-
-```
-npm install -g ipt
-```
-
 ## Manual packages
 
 ```
