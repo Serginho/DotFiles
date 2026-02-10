@@ -136,6 +136,25 @@ function _gwco_autocomplete() {
 
 compdef _gwco_autocomplete __gwco gwco
 
+function gwcof() {
+  git rev-parse --is-inside-work-tree > /dev/null 2>&1 || return 1
+
+  local selected_line
+  selected_line=$(git worktree list | \
+                  fzf --height 40% --layout=reverse --border --prompt="Ir al worktree > " --query="$1")
+
+  if [ -z "$selected_line" ]; then
+    return 0
+  fi
+
+  local target_dir
+  target_dir=$(echo "$selected_line" | awk '{print $1}')
+
+  echo "🚀 Cambiando directorio..."
+  echo "📂 Destino: $target_dir"
+  
+  cd "$target_dir"
+}
 function __gwrm() {
   if [ -z "$1" ]; then
     echo "❌ Error: Debes especificar el nombre del worktree."
