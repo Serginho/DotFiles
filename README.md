@@ -44,6 +44,7 @@ Directory .config
 ```
 ln -s ~/DotFiles/nvim
 ln -s ~/DotFiles/lsd
+ln -s ~/DotFiles/alacritty
 ```
 
 ## Raycast

@@ -1,6 +1,8 @@
+[general]
 import = [
   "~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
 ]
+
 [env]
 TERM = "xterm-256color"
 
