@@ -101,3 +101,4 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
 export PATH=/Users/astrum/.opencode/bin:$PATH
+export PATH="$HOME/.local/bin:$PATH"

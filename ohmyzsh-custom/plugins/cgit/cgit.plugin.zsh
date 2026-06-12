@@ -43,6 +43,7 @@ alias gcb='git checkout -b'
 alias gbd='git branch -d'
 alias gbl='git branch -l'
 alias gbcp='git branch --show-current | pbcopy' 
+alias gbrn='git branch -m'
 alias gco='git checkout'
 alias gcfd=__gcfd
 alias gbd=__delete_branches
