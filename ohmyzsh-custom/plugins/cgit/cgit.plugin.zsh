@@ -126,7 +126,30 @@ function __gwco() {
   git worktree add -b "$branch" "$target_dir" "$base" 2>/dev/null || \
   git worktree add "$target_dir" "$branch"
 
-  cd "$target_dir" 
+  local worktree_config="$repo_root/.worktree"
+  if [ -f "$worktree_config" ]; then
+    echo "\n📋 Copiando archivos desde .worktree..."
+    while IFS= read -r line || [ -n "$line" ]; do
+      # Trim leading/trailing whitespace
+      line="${line#"${line%%[! $'\t']*}"}"
+      line="${line%"${line##*[! $'\t']}"}"
+      # Skip comments and empty lines
+      [[ "$line" == \#* ]] && continue
+      [ -z "$line" ] && continue
+
+      local src="$repo_root/$line"
+      if [ -e "$src" ]; then
+        local dest_dir="$target_dir/$(dirname "$line")"
+        mkdir -p "$dest_dir"
+        cp -r "$src" "$dest_dir/"
+        echo "  ✅ $line"
+      else
+        echo "  ⚠️  No encontrado: $line"
+      fi
+    done < "$worktree_config"
+  fi
+
+  cd "$target_dir"
 }
 
 function _gwco_autocomplete() {
