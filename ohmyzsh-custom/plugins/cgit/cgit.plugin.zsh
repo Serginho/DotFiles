@@ -98,9 +98,17 @@ alias gpt='git push origin'
 
 function __gwco() {
   if [ -z "$1" ]; then
-    echo "❌ Error: Debes especificar el nombre de la rama."
-    echo "Uso: gwco <rama> [base]"
-    return 1
+    git rev-parse --is-inside-work-tree > /dev/null 2>&1 || return 1
+    local selected_line
+    selected_line=$(git worktree list | \
+                    fzf --height 40% --layout=reverse --border --prompt="Ir al worktree > ")
+    [ -z "$selected_line" ] && return 0
+    local target_dir
+    target_dir=$(echo "$selected_line" | awk '{print $1}')
+    echo "🚀 Cambiando directorio..."
+    echo "📂 Destino: $target_dir"
+    cd "$target_dir"
+    return 0
   fi
 
   local branch="$1"
@@ -160,35 +168,21 @@ function _gwco_autocomplete() {
 
 compdef _gwco_autocomplete __gwco gwco
 
-function gwcof() {
-  git rev-parse --is-inside-work-tree > /dev/null 2>&1 || return 1
 
-  local selected_line
-  selected_line=$(git worktree list | \
-                  fzf --height 40% --layout=reverse --border --prompt="Ir al worktree > " --query="$1")
-
-  if [ -z "$selected_line" ]; then
-    return 0
-  fi
-
-  local target_dir
-  target_dir=$(echo "$selected_line" | awk '{print $1}')
-
-  echo "🚀 Cambiando directorio..."
-  echo "📂 Destino: $target_dir"
-  
-  cd "$target_dir"
-}
 function __gwrm() {
-  if [ -z "$1" ]; then
-    echo "❌ Error: Debes especificar el nombre del worktree."
-    echo "Uso: gwrm <worktree>"
-    return 1
-  fi
-
-  local worktree="$1"
   local repo_root
   repo_root=$(git worktree list --porcelain | awk '/worktree/ {print $2; exit}')
+
+  local worktree
+  if [ -z "$1" ]; then
+    local selected_line
+    selected_line=$(git worktree list | tail -n +2 | \
+                    fzf --height 40% --layout=reverse --border --prompt="Eliminar worktree > ")
+    [ -z "$selected_line" ] && return 0
+    worktree=$(echo "$selected_line" | awk '{print $1}' | xargs basename)
+  else
+    worktree="$1"
+  fi
 
   local parent_dir
   parent_dir=$(dirname "$repo_root")
