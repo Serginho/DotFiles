@@ -7,6 +7,3 @@
 [submodule "raycast/extensions/raycast-ollama"]
 	path = raycast/extensions/raycast-ollama
 	url = git@github.com:Serginho/raycast-ollama.git
-[submodule "raycast/extensions/raycast-local-bookmarks"]
-	path = raycast/extensions/raycast-local-bookmarks
-  url = git@github.com:Serginho/raycast-local-bookmarks.git
