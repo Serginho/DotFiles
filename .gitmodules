@@ -10,3 +10,6 @@
 [submodule "raycast/extensions/raycast-local-bookmarks"]
 	path = raycast/extensions/raycast-local-bookmarks
 	url = git@github.com:Serginho/raycast-local-bookmarks.git
+[submodule "raycast/extensions/raycast-slack"]
+	path = raycast/extensions/raycast-slack
+	url = git@github.com:Serginho/raycast-slack.git
