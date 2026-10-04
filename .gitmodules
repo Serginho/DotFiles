@@ -13,3 +13,6 @@
 [submodule "raycast/extensions/raycast-slack"]
 	path = raycast/extensions/raycast-slack
 	url = git@github.com:Serginho/raycast-slack.git
+[submodule "raycast/extensions/raycast-docker"]
+	path = raycast/extensions/raycast-docker
+	url = git@github.com:Serginho/raycast-docker.git
