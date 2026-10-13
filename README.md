@@ -18,6 +18,16 @@ brew install jq
 brew install openai-whisper
 ```
 
+### Linux (Debian/Ubuntu)
+
+```
+sudo apt install zsh neovim fzf silversearcher-ag lsd bat cloc gh git git-lfs jq
+pipx install openai-whisper
+```
+
+On Debian/Ubuntu `bat` is installed as `batcat`: `ln -s /usr/bin/batcat ~/.local/bin/bat`.
+Debian's `neovim` package may be too old for LazyVim; use the official release if so.
+
 ## Manual packages
 
 ```

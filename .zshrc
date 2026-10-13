@@ -24,12 +24,19 @@ if [[ `uname` == 'Darwin' ]]; then
   #alias ls='ls -AFpG'
   export LSCOLORS=ExfxbEaEBxxEhEhBaDaCaD
 else
-  alias ls='ls -AFpG --color=auto'
   alias clipboard='xclip -i -selection "clipboard"'
 fi
 
+# pbcopy outside macOS: copy to the terminal clipboard using OSC 52
+# (works over SSH and inside tmux with "set-clipboard on")
+if ! (( $+commands[pbcopy] )); then
+  function pbcopy() {
+    printf '\033]52;c;%s\a' "$(base64 | tr -d '\n')" > /dev/tty
+  }
+fi
+
 # Brew
-export PATH=/opt/homebrew/bin:$PATH
+[ -d /opt/homebrew/bin ] && export PATH=/opt/homebrew/bin:$PATH
 
 
 alias rm='rm -i'
@@ -56,7 +63,7 @@ alias vimdiff='nvim -d'
 
 # Tmux tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
+(( $+commands[tmuxifier] )) && eval "$(tmuxifier init -)"
 
 # Web
 export PATH="$HOME/.npm-global/bin:$PATH"
@@ -73,7 +80,11 @@ function convertpng() {
 	fi
 }
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+elif (( $+commands[fzf] )) && fzf --zsh &> /dev/null; then
+  source <(fzf --zsh)
+fi
 if type ag &> /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
@@ -83,22 +94,21 @@ export NODE_OPTIONS=--max_old_space_size=4096
 
 # Arm64 puppetter provide chromium
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
-export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+(( $+commands[chromium] )) && export PUPPETEER_EXECUTABLE_PATH=$commands[chromium]
 
 # Jira
 export JIRA_DEFAULT_ACTION='dashboard'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # bun completions
-[ -s "/Users/astrum/.bun/_bun" ] && source "/Users/astrum/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # opencode
-export PATH=/Users/astrum/.opencode/bin:$PATH
+export PATH="$HOME/.opencode/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
