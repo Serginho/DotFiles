@@ -134,9 +134,9 @@ function __gwco() {
   git worktree add -b "$branch" "$target_dir" "$base" 2>/dev/null || \
   git worktree add "$target_dir" "$branch"
 
-  local worktree_config="$repo_root/.worktree"
+  local worktree_config="$repo_root/.worktreeinclude"
   if [ -f "$worktree_config" ]; then
-    echo "\n📋 Copiando archivos desde .worktree..."
+    echo "\n📋 Copiando archivos desde .worktreeinclude..."
     while IFS= read -r line || [ -n "$line" ]; do
       # Trim leading/trailing whitespace
       line="${line#"${line%%[! $'\t']*}"}"
